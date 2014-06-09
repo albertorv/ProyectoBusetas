@@ -20,6 +20,8 @@ EndTime Time,
 constraint pk_RouteScheduleId primary key(id)
 )
 go
+
+
 create table EmployeeType(
 id int identity, 
 name varchar(100), 
