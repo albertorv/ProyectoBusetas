@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BusetasModelStoreContainer" CdmEntityContainer="BusetasEntities">
+    <EntitySetMapping Name="Bus">
+      <EntityTypeMapping TypeName="BusetasModel.Bus">
+        <MappingFragment StoreEntitySet="Bus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="BusetasModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="employeeTypeId" ColumnName="employeeTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeType">
+      <EntityTypeMapping TypeName="BusetasModel.EmployeeType">
+        <MappingFragment StoreEntitySet="EmployeeType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonInCharge">
+      <EntityTypeMapping TypeName="BusetasModel.PersonInCharge">
+        <MappingFragment StoreEntitySet="PersonInCharge">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Route">
+      <EntityTypeMapping TypeName="BusetasModel.Route">
+        <MappingFragment StoreEntitySet="Route">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="busId" ColumnName="busId" />
+          <ScalarProperty Name="routeScheduleId" ColumnName="routeScheduleId" />
+          <ScalarProperty Name="goingToSchool" ColumnName="goingToSchool" />
+          <ScalarProperty Name="goingToHome" ColumnName="goingToHome" />
+          <ScalarProperty Name="pilotId" ColumnName="pilotId" />
+          <ScalarProperty Name="copilotId" ColumnName="copilotId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RouteSchedule">
+      <EntityTypeMapping TypeName="BusetasModel.RouteSchedule">
+        <MappingFragment StoreEntitySet="RouteSchedule">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dayOfTheWeek" ColumnName="dayOfTheWeek" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RouteStudent">
+      <EntityTypeMapping TypeName="BusetasModel.RouteStudent">
+        <MappingFragment StoreEntitySet="RouteStudent">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="routeId" ColumnName="routeId" />
+          <ScalarProperty Name="studentId" ColumnName="studentId" />
+          <ScalarProperty Name="orderInRoute" ColumnName="orderInRoute" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="School">
+      <EntityTypeMapping TypeName="BusetasModel.School">
+        <MappingFragment StoreEntitySet="School">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student">
+      <EntityTypeMapping TypeName="BusetasModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="personInChargeId" ColumnName="personInChargeId" />
+          <ScalarProperty Name="schoolId" ColumnName="schoolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
