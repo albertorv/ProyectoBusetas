@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="564cfa52b385409d8b0ba792cff9e6c2" Name="Diagrama1">
+        <EntityTypeShape EntityType="BusetasModel.Bus" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusetasModel.Employee" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusetasModel.EmployeeType" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusetasModel.PersonInCharge" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusetasModel.Route" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusetasModel.RouteSchedule" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusetasModel.RouteStudent" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusetasModel.School" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusetasModel.Student" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <AssociationConnector Association="BusetasModel.fk_Route_BusId" ManuallyRouted="false" />
+        <AssociationConnector Association="BusetasModel.fk_Employee_EmployeeTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BusetasModel.fk_Route_CopilotId" ManuallyRouted="false" />
+        <AssociationConnector Association="BusetasModel.fk_Route_PilotId" ManuallyRouted="false" />
+        <AssociationConnector Association="BusetasModel.fk_Student_PersonInChargeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BusetasModel.fk_Route_RouteScheduleId" ManuallyRouted="false" />
+        <AssociationConnector Association="BusetasModel.fk_RouteStudent_RouteId" ManuallyRouted="false" />
+        <AssociationConnector Association="BusetasModel.fk_RouteStudent_StudentId" ManuallyRouted="false" />
+        <AssociationConnector Association="BusetasModel.fk_Student_SchoolId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appBusetas", "appBusetas\appBusetas.csproj", "{82BA27D1-38ED-4DD1-AB93-85271B037D0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appBusetas.Tests", "appBusetas.Tests\appBusetas.Tests.csproj", "{5AE62F0E-5CB8-4EBD-AC09-DEB5E54F4C8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buseta_DataAccess", "Buseta_DataAccess\Buseta_DataAccess.csproj", "{9CAB5A1F-C67C-4D2D-A7BE-0826457A1A7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +21,10 @@ Global
 		{5AE62F0E-5CB8-4EBD-AC09-DEB5E54F4C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AE62F0E-5CB8-4EBD-AC09-DEB5E54F4C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AE62F0E-5CB8-4EBD-AC09-DEB5E54F4C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CAB5A1F-C67C-4D2D-A7BE-0826457A1A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CAB5A1F-C67C-4D2D-A7BE-0826457A1A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CAB5A1F-C67C-4D2D-A7BE-0826457A1A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CAB5A1F-C67C-4D2D-A7BE-0826457A1A7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

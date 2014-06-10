@@ -1,0 +1,650 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BusetasModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BusetasModelStoreContainer">
+          <EntitySet Name="Bus" EntityType="BusetasModel.Store.Bus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employee" EntityType="BusetasModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmployeeType" EntityType="BusetasModel.Store.EmployeeType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonInCharge" EntityType="BusetasModel.Store.PersonInCharge" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Route" EntityType="BusetasModel.Store.Route" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RouteSchedule" EntityType="BusetasModel.Store.RouteSchedule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RouteStudent" EntityType="BusetasModel.Store.RouteStudent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="School" EntityType="BusetasModel.Store.School" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Student" EntityType="BusetasModel.Store.Student" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="fk_Employee_EmployeeTypeId" Association="BusetasModel.Store.fk_Employee_EmployeeTypeId">
+            <End Role="EmployeeType" EntitySet="EmployeeType" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Route_BusId" Association="BusetasModel.Store.fk_Route_BusId">
+            <End Role="Bus" EntitySet="Bus" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Route_CopilotId" Association="BusetasModel.Store.fk_Route_CopilotId">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Route_PilotId" Association="BusetasModel.Store.fk_Route_PilotId">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Route_RouteScheduleId" Association="BusetasModel.Store.fk_Route_RouteScheduleId">
+            <End Role="RouteSchedule" EntitySet="RouteSchedule" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RouteStudent_RouteId" Association="BusetasModel.Store.fk_RouteStudent_RouteId">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="RouteStudent" EntitySet="RouteStudent" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RouteStudent_StudentId" Association="BusetasModel.Store.fk_RouteStudent_StudentId">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="RouteStudent" EntitySet="RouteStudent" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Student_PersonInChargeId" Association="BusetasModel.Store.fk_Student_PersonInChargeId">
+            <End Role="PersonInCharge" EntitySet="PersonInCharge" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Student_SchoolId" Association="BusetasModel.Store.fk_Student_SchoolId">
+            <End Role="School" EntitySet="School" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Bus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="brand" Type="varchar" MaxLength="100" />
+          <Property Name="color" Type="varchar" MaxLength="100" />
+          <Property Name="capacity" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="lastname" Type="varchar" MaxLength="100" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="telephone" Type="varchar" MaxLength="50" />
+          <Property Name="employeeTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeeType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="description" Type="text" />
+          <Property Name="salary" Type="decimal" />
+        </EntityType>
+        <EntityType Name="PersonInCharge">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="lastName" Type="varchar" MaxLength="100" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="telephone" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="busId" Type="int" />
+          <Property Name="routeScheduleId" Type="int" />
+          <Property Name="goingToSchool" Type="bit" />
+          <Property Name="goingToHome" Type="bit" />
+          <Property Name="pilotId" Type="int" />
+          <Property Name="copilotId" Type="int" />
+        </EntityType>
+        <EntityType Name="RouteSchedule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dayOfTheWeek" Type="varchar" MaxLength="100" />
+          <Property Name="StartTime" Type="time" />
+          <Property Name="EndTime" Type="time" />
+        </EntityType>
+        <EntityType Name="RouteStudent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="routeId" Type="int" />
+          <Property Name="studentId" Type="int" />
+          <Property Name="orderInRoute" Type="int" />
+        </EntityType>
+        <EntityType Name="School">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="address" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="lastName" Type="varchar" MaxLength="100" />
+          <Property Name="age" Type="int" />
+          <Property Name="address" Type="varchar" MaxLength="250" />
+          <Property Name="telephone" Type="varchar" MaxLength="50" />
+          <Property Name="personInChargeId" Type="int" />
+          <Property Name="schoolId" Type="int" />
+        </EntityType>
+        <Association Name="fk_Employee_EmployeeTypeId">
+          <End Role="EmployeeType" Type="BusetasModel.Store.EmployeeType" Multiplicity="0..1" />
+          <End Role="Employee" Type="BusetasModel.Store.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="employeeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Route_BusId">
+          <End Role="Bus" Type="BusetasModel.Store.Bus" Multiplicity="0..1" />
+          <End Role="Route" Type="BusetasModel.Store.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="busId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Route_CopilotId">
+          <End Role="Employee" Type="BusetasModel.Store.Employee" Multiplicity="0..1" />
+          <End Role="Route" Type="BusetasModel.Store.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="copilotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Route_PilotId">
+          <End Role="Employee" Type="BusetasModel.Store.Employee" Multiplicity="0..1" />
+          <End Role="Route" Type="BusetasModel.Store.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="pilotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Route_RouteScheduleId">
+          <End Role="RouteSchedule" Type="BusetasModel.Store.RouteSchedule" Multiplicity="0..1" />
+          <End Role="Route" Type="BusetasModel.Store.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RouteSchedule">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="routeScheduleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RouteStudent_RouteId">
+          <End Role="Route" Type="BusetasModel.Store.Route" Multiplicity="0..1" />
+          <End Role="RouteStudent" Type="BusetasModel.Store.RouteStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RouteStudent">
+              <PropertyRef Name="routeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RouteStudent_StudentId">
+          <End Role="Student" Type="BusetasModel.Store.Student" Multiplicity="0..1" />
+          <End Role="RouteStudent" Type="BusetasModel.Store.RouteStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RouteStudent">
+              <PropertyRef Name="studentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Student_PersonInChargeId">
+          <End Role="PersonInCharge" Type="BusetasModel.Store.PersonInCharge" Multiplicity="0..1" />
+          <End Role="Student" Type="BusetasModel.Store.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonInCharge">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="personInChargeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Student_SchoolId">
+          <End Role="School" Type="BusetasModel.Store.School" Multiplicity="0..1" />
+          <End Role="Student" Type="BusetasModel.Store.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="schoolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BusetasModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BusetasEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Bus" EntityType="BusetasModel.Bus" />
+          <EntitySet Name="Employee" EntityType="BusetasModel.Employee" />
+          <EntitySet Name="EmployeeType" EntityType="BusetasModel.EmployeeType" />
+          <EntitySet Name="PersonInCharge" EntityType="BusetasModel.PersonInCharge" />
+          <EntitySet Name="Route" EntityType="BusetasModel.Route" />
+          <EntitySet Name="RouteSchedule" EntityType="BusetasModel.RouteSchedule" />
+          <EntitySet Name="RouteStudent" EntityType="BusetasModel.RouteStudent" />
+          <EntitySet Name="School" EntityType="BusetasModel.School" />
+          <EntitySet Name="Student" EntityType="BusetasModel.Student" />
+          <AssociationSet Name="fk_Route_BusId" Association="BusetasModel.fk_Route_BusId">
+            <End Role="Bus" EntitySet="Bus" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Employee_EmployeeTypeId" Association="BusetasModel.fk_Employee_EmployeeTypeId">
+            <End Role="EmployeeType" EntitySet="EmployeeType" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Route_CopilotId" Association="BusetasModel.fk_Route_CopilotId">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Route_PilotId" Association="BusetasModel.fk_Route_PilotId">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Student_PersonInChargeId" Association="BusetasModel.fk_Student_PersonInChargeId">
+            <End Role="PersonInCharge" EntitySet="PersonInCharge" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Route_RouteScheduleId" Association="BusetasModel.fk_Route_RouteScheduleId">
+            <End Role="RouteSchedule" EntitySet="RouteSchedule" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RouteStudent_RouteId" Association="BusetasModel.fk_RouteStudent_RouteId">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="RouteStudent" EntitySet="RouteStudent" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RouteStudent_StudentId" Association="BusetasModel.fk_RouteStudent_StudentId">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="RouteStudent" EntitySet="RouteStudent" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Student_SchoolId" Association="BusetasModel.fk_Student_SchoolId">
+            <End Role="School" EntitySet="School" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Bus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="brand" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="color" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="capacity" Type="Int32" />
+          <NavigationProperty Name="Route" Relationship="BusetasModel.fk_Route_BusId" FromRole="Bus" ToRole="Route" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="lastname" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="telephone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="employeeTypeId" Type="Int32" />
+          <NavigationProperty Name="EmployeeType" Relationship="BusetasModel.fk_Employee_EmployeeTypeId" FromRole="Employee" ToRole="EmployeeType" />
+          <NavigationProperty Name="Route" Relationship="BusetasModel.fk_Route_CopilotId" FromRole="Employee" ToRole="Route" />
+          <NavigationProperty Name="Route1" Relationship="BusetasModel.fk_Route_PilotId" FromRole="Employee" ToRole="Route" />
+        </EntityType>
+        <EntityType Name="EmployeeType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="salary" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Employee" Relationship="BusetasModel.fk_Employee_EmployeeTypeId" FromRole="EmployeeType" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="PersonInCharge">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="lastName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="telephone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Student" Relationship="BusetasModel.fk_Student_PersonInChargeId" FromRole="PersonInCharge" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="busId" Type="Int32" />
+          <Property Name="routeScheduleId" Type="Int32" />
+          <Property Name="goingToSchool" Type="Boolean" />
+          <Property Name="goingToHome" Type="Boolean" />
+          <Property Name="pilotId" Type="Int32" />
+          <Property Name="copilotId" Type="Int32" />
+          <NavigationProperty Name="Bus" Relationship="BusetasModel.fk_Route_BusId" FromRole="Route" ToRole="Bus" />
+          <NavigationProperty Name="Employee" Relationship="BusetasModel.fk_Route_CopilotId" FromRole="Route" ToRole="Employee" />
+          <NavigationProperty Name="Employee1" Relationship="BusetasModel.fk_Route_PilotId" FromRole="Route" ToRole="Employee" />
+          <NavigationProperty Name="RouteSchedule" Relationship="BusetasModel.fk_Route_RouteScheduleId" FromRole="Route" ToRole="RouteSchedule" />
+          <NavigationProperty Name="RouteStudent" Relationship="BusetasModel.fk_RouteStudent_RouteId" FromRole="Route" ToRole="RouteStudent" />
+        </EntityType>
+        <EntityType Name="RouteSchedule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="dayOfTheWeek" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="StartTime" Type="Time" Precision="7" />
+          <Property Name="EndTime" Type="Time" Precision="7" />
+          <NavigationProperty Name="Route" Relationship="BusetasModel.fk_Route_RouteScheduleId" FromRole="RouteSchedule" ToRole="Route" />
+        </EntityType>
+        <EntityType Name="RouteStudent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="routeId" Type="Int32" />
+          <Property Name="studentId" Type="Int32" />
+          <Property Name="orderInRoute" Type="Int32" />
+          <NavigationProperty Name="Route" Relationship="BusetasModel.fk_RouteStudent_RouteId" FromRole="RouteStudent" ToRole="Route" />
+          <NavigationProperty Name="Student" Relationship="BusetasModel.fk_RouteStudent_StudentId" FromRole="RouteStudent" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="School">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Student" Relationship="BusetasModel.fk_Student_SchoolId" FromRole="School" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="lastName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="telephone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="personInChargeId" Type="Int32" />
+          <Property Name="schoolId" Type="Int32" />
+          <NavigationProperty Name="PersonInCharge" Relationship="BusetasModel.fk_Student_PersonInChargeId" FromRole="Student" ToRole="PersonInCharge" />
+          <NavigationProperty Name="RouteStudent" Relationship="BusetasModel.fk_RouteStudent_StudentId" FromRole="Student" ToRole="RouteStudent" />
+          <NavigationProperty Name="School" Relationship="BusetasModel.fk_Student_SchoolId" FromRole="Student" ToRole="School" />
+        </EntityType>
+        <Association Name="fk_Route_BusId">
+          <End Role="Bus" Type="BusetasModel.Bus" Multiplicity="0..1" />
+          <End Role="Route" Type="BusetasModel.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="busId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Employee_EmployeeTypeId">
+          <End Role="EmployeeType" Type="BusetasModel.EmployeeType" Multiplicity="0..1" />
+          <End Role="Employee" Type="BusetasModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="employeeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Route_CopilotId">
+          <End Role="Employee" Type="BusetasModel.Employee" Multiplicity="0..1" />
+          <End Role="Route" Type="BusetasModel.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="copilotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Route_PilotId">
+          <End Role="Employee" Type="BusetasModel.Employee" Multiplicity="0..1" />
+          <End Role="Route" Type="BusetasModel.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="pilotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Student_PersonInChargeId">
+          <End Role="PersonInCharge" Type="BusetasModel.PersonInCharge" Multiplicity="0..1" />
+          <End Role="Student" Type="BusetasModel.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonInCharge">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="personInChargeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Route_RouteScheduleId">
+          <End Role="RouteSchedule" Type="BusetasModel.RouteSchedule" Multiplicity="0..1" />
+          <End Role="Route" Type="BusetasModel.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RouteSchedule">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="routeScheduleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RouteStudent_RouteId">
+          <End Role="Route" Type="BusetasModel.Route" Multiplicity="0..1" />
+          <End Role="RouteStudent" Type="BusetasModel.RouteStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RouteStudent">
+              <PropertyRef Name="routeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RouteStudent_StudentId">
+          <End Role="Student" Type="BusetasModel.Student" Multiplicity="0..1" />
+          <End Role="RouteStudent" Type="BusetasModel.RouteStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RouteStudent">
+              <PropertyRef Name="studentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Student_SchoolId">
+          <End Role="School" Type="BusetasModel.School" Multiplicity="0..1" />
+          <End Role="Student" Type="BusetasModel.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="schoolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BusetasModelStoreContainer" CdmEntityContainer="BusetasEntities">
+          <EntitySetMapping Name="Bus">
+            <EntityTypeMapping TypeName="BusetasModel.Bus">
+              <MappingFragment StoreEntitySet="Bus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="capacity" ColumnName="capacity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="BusetasModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="employeeTypeId" ColumnName="employeeTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeType">
+            <EntityTypeMapping TypeName="BusetasModel.EmployeeType">
+              <MappingFragment StoreEntitySet="EmployeeType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonInCharge">
+            <EntityTypeMapping TypeName="BusetasModel.PersonInCharge">
+              <MappingFragment StoreEntitySet="PersonInCharge">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Route">
+            <EntityTypeMapping TypeName="BusetasModel.Route">
+              <MappingFragment StoreEntitySet="Route">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="busId" ColumnName="busId" />
+                <ScalarProperty Name="routeScheduleId" ColumnName="routeScheduleId" />
+                <ScalarProperty Name="goingToSchool" ColumnName="goingToSchool" />
+                <ScalarProperty Name="goingToHome" ColumnName="goingToHome" />
+                <ScalarProperty Name="pilotId" ColumnName="pilotId" />
+                <ScalarProperty Name="copilotId" ColumnName="copilotId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RouteSchedule">
+            <EntityTypeMapping TypeName="BusetasModel.RouteSchedule">
+              <MappingFragment StoreEntitySet="RouteSchedule">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="dayOfTheWeek" ColumnName="dayOfTheWeek" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RouteStudent">
+            <EntityTypeMapping TypeName="BusetasModel.RouteStudent">
+              <MappingFragment StoreEntitySet="RouteStudent">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="routeId" ColumnName="routeId" />
+                <ScalarProperty Name="studentId" ColumnName="studentId" />
+                <ScalarProperty Name="orderInRoute" ColumnName="orderInRoute" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="School">
+            <EntityTypeMapping TypeName="BusetasModel.School">
+              <MappingFragment StoreEntitySet="School">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student">
+            <EntityTypeMapping TypeName="BusetasModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="personInChargeId" ColumnName="personInChargeId" />
+                <ScalarProperty Name="schoolId" ColumnName="schoolId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
