@@ -1,0 +1,61 @@
+﻿@model Buseta_DataAccess.Bus
+
+@{
+    ViewBag.Title = "Delete";
+}
+<body style="background-color: #64A9CE;">
+<center><h2>Delete</h2></center>
+
+<h4  >Are you sure you want to delete this?</h4>
+<fieldset>
+    <div class="table-responsive">
+        <center>
+        <table class="table table-bordered">
+            <tr class="active">
+                <td class="display-label">
+                        @Html.DisplayNameFor(model => model.brand) 
+                </td>
+
+                <td class="display-label">
+                        @Html.DisplayNameFor(model => model.color)
+                    </td>
+                  
+                
+
+                <td class="display-label">
+                        @Html.DisplayNameFor(model => model.capacity)
+                    </td>
+                    
+              
+            </tr>
+            <tr class="active">
+               <td class="display-field">
+                        @Html.DisplayFor(model => model.brand)
+               </td>
+
+                <td class="display-field">
+                        @Html.DisplayFor(model => model.color)
+
+               </td>
+                <td class="display-field">
+                        @Html.DisplayFor(model => model.capacity)
+               </td>
+
+
+            </tr>
+        </table>
+            </center
+    </div>
+</fieldset>
+    <center>
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="button"  class="btn btn-default" value="Delete" />
+        |
+       
+    <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
+    </p>
+}
+     </center
+    </body>

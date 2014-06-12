@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Buseta_DataAccess.Bus>
+
+@{
+    ViewBag.Title = "Index";
+}
+<body style="background-color: #64A9CE;">
+<center><h2>Mantenimieto Buseta</h2></center>
+
+
+<center>
+<table class="table table-hover">
+    <tr class="active">
+        <th class="active">
+            @Html.DisplayNameFor(model => model.brand)
+        </th>
+        <th class="active">
+            @Html.DisplayNameFor(model => model.color)
+        </th>
+        <th class="active">
+            @Html.DisplayNameFor(model => model.capacity)
+        </th>
+        <th>
+            Mantenimientos
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="success">
+        <td class="active">
+            @Html.DisplayFor(modelItem => item.brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.color)
+        </td>
+        <td class="active">
+            @Html.DisplayFor(modelItem => item.capacity)
+        </td>
+        <td class="active">
+            <button type="button" class=="btn btn-default">
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+                </button>
+        </td>
+    </tr>
+}
+
+</table>
+    <button type="button" class="btn btn-default">
+    @Html.ActionLink("Create New", "Create")
+</button>
+    </center>
+    </body>

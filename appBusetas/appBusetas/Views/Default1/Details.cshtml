@@ -1,0 +1,60 @@
+﻿@model Buseta_DataAccess.Bus
+
+@{
+    ViewBag.Title = "Details";
+}
+<body style="background-color: #64A9CE;">
+<center><h2>Details</h2></center>
+
+<fieldset>
+    <legend>Bus</legend>
+
+    <div class="display-label">
+  <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr class="active">
+                <td class="display-label">
+                        @Html.DisplayNameFor(model => model.brand)
+                 
+                    
+                </td>
+
+                <td class="display-label">
+                        @Html.DisplayNameFor(model => model.color)
+                    </td>
+                  
+                
+
+                <td class="display-label">
+                        @Html.DisplayNameFor(model => model.capacity)
+                    </td>
+                    
+              
+            </tr>
+            <tr class="active">
+               <td class="display-field">
+                        @Html.DisplayFor(model => model.brand)
+               </td>
+
+                <td class="display-field">
+                        @Html.DisplayFor(model => model.color)
+
+               </td>
+                <td class="display-field">
+                        @Html.DisplayFor(model => model.capacity)
+               </td>
+
+
+            </tr>
+        </table>
+    </div>
+        </div>
+</fieldset>
+    <center>
+
+      <button type="submit"   class="btn btn-default" value="Create">
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+  </button>
+    </center
+    </body>

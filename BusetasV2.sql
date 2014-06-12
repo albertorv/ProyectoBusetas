@@ -1,5 +1,4 @@
-use master
-go
+
 create database Busetas
 go
 use Busetas
@@ -40,6 +39,7 @@ constraint pk_EmployeeId primary key (id),
 constraint fk_Employee_EmployeeTypeId foreign key (employeeTypeId) references EmployeeType(id)
 )
 go
+
 create table Route(
 id int identity, 
 busId int, 
@@ -106,4 +106,5 @@ add constraint fk_Route_CopilotId foreign key (copilotId) references Employee(id
 
 alter table EmployeeType
 add salary decimal
+
 

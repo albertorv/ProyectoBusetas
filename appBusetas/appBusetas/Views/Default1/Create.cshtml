@@ -1,0 +1,75 @@
+﻿@model Buseta_DataAccess.Bus
+
+@{
+    ViewBag.Title = "Create";
+}
+<center><h2>Create</h2></center>
+   <div class="table">
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+       
+
+     <center>  
+    <form class="form-horizontal" role="form"style="background-color: white;">
+  <div class="form-group">
+      <div class="editor-label">
+    <label for="inputEmail3" class="col-sm-2 control-label"> @Html.LabelFor(model => model.brand)</label>
+   
+     <div class="editor-field">
+            @Html.EditorFor(model => model.brand)
+            @Html.ValidationMessageFor(model => model.brand)
+           </div>
+    </div>
+  </div>
+
+  
+
+
+  <div class="form-group">
+       <div class="editor-label">
+    <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(model => model.color)</label>
+
+    </div>
+  </div>
+ <div class="form-group">
+           <div class="editor-field">
+            @Html.EditorFor(model => model.color)
+            @Html.ValidationMessageFor(model => model.color)
+           </div>
+       </div>
+
+
+ <div class="form-group">
+       <div class="editor-label">
+    <label for="inputPassword4" class="col-sm-2 control-label">@Html.LabelFor(model => model.capacity)</label>
+   
+    </div>
+  </div>
+ <div class="form-group">
+           <div class="editor-field">
+            @Html.EditorFor(model => model.capacity)
+            @Html.ValidationMessageFor(model => model.capacity)
+           </div>
+       </div>
+        <div>
+      <button type="submit"   class="btn btn-success" value="Create">Create</button>
+    </div>
+  
+</form>
+
+   </center> 
+    </fieldset>
+  
+}
+       </div>
+
+<div>
+   <button type="submit"   class="btn btn-success" value="Create"> @Html.ActionLink("Back to List", "Index")</button>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+     
