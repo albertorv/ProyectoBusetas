@@ -28,6 +28,7 @@ background-color: #5F9F9F;
 	border: solid;
 	width: 40%;
 	height: 50%;
+      text-align: center;
 }
 .estilo_div1_log{
 	position: absolute;
@@ -75,7 +76,6 @@ border-radius: 50px;
 	width: 35%;
 	height: 30%;
 	margin-left: 35%;
-	margin-top: -16%;
 	
 	color: #234578;
 }
@@ -96,8 +96,6 @@ section #conte{
   text-align: center;
   margin-top: 50px;
     color: #70DBDB;
-
-
 
 }
 h3{
@@ -120,9 +118,71 @@ article{
  
 
 
-#info{
-margin-top: 5%;
- width: 90%;
- height:80%;
 
+
+#h1{
+
+  text-align: center;
+  color: green;
+  text-transform: uppercase;
+
+  font-family: 'Raleway', cursive;
+  font-weight: 100;
+  margin-top: -39.7%;
+  background: -webkit-linear-gradient(left, black, #eee, black);
+  background: -moz-linear-gradient(left, black, #eee, black);
+  background: -ms-linear-gradient(left, black, #eee, black);
+  background: -o-linear-gradient(left, black, #eee, black);
+}
+
+ 
+
+
+
+
+.img-circle{
+	margin-left: 75%;
+	margin-top: -30%;
+
+}
+#inputEmail3{
+	margin-left: 15%;
+}
+
+#texto1{
+	font-family: Bookman Old Style;
+    font-size: 250%;
+    margin-top: 10%;
+   
+}
+.centered{
+	 float: none;
+    margin: 0 auto;
+    margin-top: 5%;
+
+	border-radius: 5%;
+    background-color: #C0D9D9
+}
+#cont{
+ background-color: #C0D9D9;
+ width: 50%;
+ height: 50%;
+ margin-left:20%;
+}
+
+#cuerpo{
+background-color: #70D8D5;
+}
+#texto{
+	border: solid;
+	border-radius: 5%;
+	width: 50%;
+	height: 80%;
+	margin-left: 25%;
+	font-size: 150%;
+	font-family: Bookman Old Style;
+}
+
+#boton{
+	margin-right: 50px;
 }

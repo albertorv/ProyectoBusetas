@@ -7,3 +7,12 @@ C:\Users\Jose\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\bin\
 C:\Users\Jose\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\obj\Debug\Buseta_DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Jose\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\obj\Debug\Buseta_DataAccess.dll
 C:\Users\Jose\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\obj\Debug\Buseta_DataAccess.pdb
+C:\Users\yorlin\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\bin\Debug\Buseta_DataAccess.dll.config
+C:\Users\yorlin\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\bin\Debug\Buseta_DataAccess.dll
+C:\Users\yorlin\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\bin\Debug\Buseta_DataAccess.pdb
+C:\Users\yorlin\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\yorlin\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\yorlin\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\yorlin\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\obj\Debug\Buseta_DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\yorlin\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\obj\Debug\Buseta_DataAccess.dll
+C:\Users\yorlin\Documents\GitHub\ProyectoBusetas\appBusetas\Buseta_DataAccess\obj\Debug\Buseta_DataAccess.pdb

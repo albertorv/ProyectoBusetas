@@ -3,15 +3,16 @@
 @{
     ViewBag.Title = "Delete";
 }
-<body style="background-color: #64A9CE;">
+<body style="background-color: #F0ECEC;">
+    <body background="http://www.wallsave.com/wallpapers/1920x1200/oscuridad/77272/oscuridad-fondos-de-pantalla-minimalistas-hd-muy-buenos-compilado-77272.jpg">
 <center><h2>Delete</h2></center>
 
-<h4  >Are you sure you want to delete this?</h4>
 <fieldset>
     <div class="table-responsive">
         <center>
-        <table class="table table-bordered">
-            <tr class="active">
+
+        <table id="tabla" class="table table-bordered">
+            <tr class="success">
                 <td class="display-label">
                         @Html.DisplayNameFor(model => model.brand) 
                 </td>
@@ -28,7 +29,7 @@
                     
               
             </tr>
-            <tr class="active">
+            <tr class="success">
                <td class="display-field">
                         @Html.DisplayFor(model => model.brand)
                </td>
