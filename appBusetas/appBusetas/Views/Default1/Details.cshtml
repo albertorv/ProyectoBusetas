@@ -3,34 +3,58 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
+    <body background="http://www.fondox.net/wallpapers/fondo-color-verde-1782.jpg">
+<center><h2>Details</h2></center>
 
 <fieldset>
     <legend>Bus</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.brand)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.brand)
-    </div>
+  <div class="table-responsive">
+        <table id="tabla" class="table table-bordered">
+            <tr class="active">
+                <td class="display-label">
+                        @Html.DisplayNameFor(model => model.brand)
+                 
+                    
+                </td>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.color)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.color)
-    </div>
+                <td class="display-label">
+                        @Html.DisplayNameFor(model => model.color)
+                    </td>
+                  
+                
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.capacity)
+                <td class="display-label">
+                        @Html.DisplayNameFor(model => model.capacity)
+                    </td>
+                    
+              
+            </tr>
+            <tr class="active">
+               <td class="display-field">
+                        @Html.DisplayFor(model => model.brand)
+               </td>
+
+                <td class="display-field">
+                        @Html.DisplayFor(model => model.color)
+
+               </td>
+                <td class="display-field">
+                        @Html.DisplayFor(model => model.capacity)
+               </td>
+
+
+            </tr>
+        </table>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.capacity)
-    </div>
+        </div>
 </fieldset>
-<p>
+    <center>
+
+      <button type="submit"   class="btn btn-default" value="Create">
     @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+  </button>
+    </center
+    </body>

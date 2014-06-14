@@ -1,51 +1,56 @@
 ﻿@model Buseta_DataAccess.Bus
-
+   <br /><br /><br />
 @{
     ViewBag.Title = "Create";
 }
-
-<h2>Create</h2>
+<center><h2>Create</h2></center>
 
 @using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
+    @Html.ValidationSummary(true) 
 
-    <fieldset>
-        <legend>Bus</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.brand)
-        </div>
-        <div class="editor-field">
+    
+    <body background="http://www.wallsave.com/wallpapers/1920x1200/oscuridad/77272/oscuridad-fondos-de-pantalla-minimalistas-hd-muy-buenos-compilado-77272.jpg">
+
+    <center>
+	<form method="POST" role="form" id="formulario">
+	
+    <div class="form-group has-success">
+         <div class="editor-label">
+        <label  for="inputEmail3"> @Html.LabelFor(model => model.brand)</label></div> 
+             <div class="editor-field">
             @Html.EditorFor(model => model.brand)
             @Html.ValidationMessageFor(model => model.brand)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.color)
-        </div>
-        <div class="editor-field">
+           </div>
+         </div>
+           <div class="form-group has-warning">
+               <div class="editor-label">
+             <label  for="inputEmail3"> @Html.LabelFor(model => model.color)</label></div> 
+             <div class="editor-field">
+            
             @Html.EditorFor(model => model.color)
             @Html.ValidationMessageFor(model => model.color)
-        </div>
+           </div>
+         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.capacity)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.capacity)
+            <div class="form-group has-error"> 
+              <div class="editor-label">
+             <label  for="inputEmail3">@Html.LabelFor(model => model.capacity)</label></div>
+             <div class="editor-field">
+             @Html.EditorFor(model => model.capacity)
             @Html.ValidationMessageFor(model => model.capacity)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+           </div>
+          </div>
+       </form>
+        
+      <button type="submit"   class="btn btn-success" value="Create">Create</button>|
+      <button type="submit"   class="btn btn-success" value="Create"> @Html.ActionLink("Back to List", "Index")</button>
+ </center>
+    </body>
+         
+	
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+     

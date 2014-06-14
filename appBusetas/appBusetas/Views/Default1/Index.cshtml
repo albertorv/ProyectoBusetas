@@ -3,43 +3,51 @@
 @{
     ViewBag.Title = "Index";
 }
+    <body background="http://4.bp.blogspot.com/-to0HfqSc6PM/UE0R3kwu8OI/AAAAAAAAI9g/B8QfKohzKzA/s1600/Fondo+de+pantalla+oto%C3%B1o+1.jpg">
+<center><h2>Mantenimieto Buseta</h2></center>
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
+<center>
+<table id="tabla" class="table table-hover">
+    <tr class="active">
+        <th class="active">
             @Html.DisplayNameFor(model => model.brand)
         </th>
-        <th>
+        <th class="active">
             @Html.DisplayNameFor(model => model.color)
         </th>
-        <th>
+        <th class="active">
             @Html.DisplayNameFor(model => model.capacity)
         </th>
-        <th></th>
+        <th>
+            Mantenimientos
+        </th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <tr class="success">
+        <td class="active">
             @Html.DisplayFor(modelItem => item.brand)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.color)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.capacity)
         </td>
-        <td>
+        <td class="active">
+            <button type="button" class=="btn btn-default">
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
+                </button>
         </td>
     </tr>
 }
 
 </table>
+    <button type="button" class="btn btn-default">
+    @Html.ActionLink("Create New", "Create")
+</button>
+    </center>
+    </body>

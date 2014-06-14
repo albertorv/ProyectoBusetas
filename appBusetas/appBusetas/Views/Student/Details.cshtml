@@ -1,0 +1,64 @@
+﻿@model Buseta_DataAccess.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Student</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.lastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.age)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.age)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telephone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telephone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PersonInCharge.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PersonInCharge.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.School.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.School.name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
