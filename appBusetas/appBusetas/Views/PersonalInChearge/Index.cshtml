@@ -4,54 +4,61 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<body background="http://4.bp.blogspot.com/-to0HfqSc6PM/UE0R3kwu8OI/AAAAAAAAI9g/B8QfKohzKzA/s1600/Fondo+de+pantalla+oto%C3%B1o+1.jpg">
+    <center><h2> Maintenance Personal in Chearge</h2></center>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
+    <center>
+<table id="tabla" class="table table-hover">
+    <tr class="active">
+        <th class="active">
             @Html.DisplayNameFor(model => model.name)
         </th>
-        <th>
+        <th class="active">
             @Html.DisplayNameFor(model => model.lastName)
         </th>
-        <th>
+        <th class="active">
             @Html.DisplayNameFor(model => model.email)
         </th>
-        <th>
+        <th class="active">
             @Html.DisplayNameFor(model => model.telephone)
         </th>
-        <th>
+        <th class="active">
             @Html.DisplayNameFor(model => model.address)
         </th>
-        <th></th>
+        <th> Maintenance</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
+@foreach (var item in Model)
+{
+    <tr class="success">
+        <td class="active">
             @Html.DisplayFor(modelItem => item.name)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.lastName)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.email)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.telephone)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.address)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+         <td class="active">
+            <button type="button" class=="btn btn-default">
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </button>
         </td>
     </tr>
 }
 
 </table>
+        <button type="button" class="btn btn-default">
+    @Html.ActionLink("Create New", "Create")
+</button>
+        </center>
+</body>
