@@ -1,0 +1,36 @@
+﻿@model Buseta_DataAccess.RouteStudent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>RouteStudent</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Route.id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Route.id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Student.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Student.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.orderInRoute)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.orderInRoute)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

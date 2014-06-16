@@ -184,8 +184,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BusetaPruebaController.cs" />
     <Compile Include="Controllers\Default1Controller.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeeTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonalInCheargeController.cs" />
+    <Compile Include="Controllers\RouteController.cs" />
+    <Compile Include="Controllers\RouteScheduleController.cs" />
+    <Compile Include="Controllers\RouteStudentController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -286,6 +291,31 @@
     <Content Include="Views\School\Create.cshtml" />
     <Content Include="Views\School\Edit.cshtml" />
     <Content Include="Views\School\Delete.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\EmployeeType\Index.cshtml" />
+    <Content Include="Views\EmployeeType\Details.cshtml" />
+    <Content Include="Views\EmployeeType\Create.cshtml" />
+    <Content Include="Views\EmployeeType\Edit.cshtml" />
+    <Content Include="Views\EmployeeType\Delete.cshtml" />
+    <Content Include="Views\Route\Index.cshtml" />
+    <Content Include="Views\Route\Details.cshtml" />
+    <Content Include="Views\Route\Create.cshtml" />
+    <Content Include="Views\Route\Edit.cshtml" />
+    <Content Include="Views\Route\Delete.cshtml" />
+    <Content Include="Views\RouteSchedule\Index.cshtml" />
+    <Content Include="Views\RouteSchedule\Details.cshtml" />
+    <Content Include="Views\RouteSchedule\Create.cshtml" />
+    <Content Include="Views\RouteSchedule\Edit.cshtml" />
+    <Content Include="Views\RouteSchedule\Delete.cshtml" />
+    <Content Include="Views\RouteStudent\Index.cshtml" />
+    <Content Include="Views\RouteStudent\Details.cshtml" />
+    <Content Include="Views\RouteStudent\Create.cshtml" />
+    <Content Include="Views\RouteStudent\Edit.cshtml" />
+    <Content Include="Views\RouteStudent\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
