@@ -266,7 +266,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\BusetaPrueba\Index.cshtml" />
     <Content Include="Views\Default1\Index.cshtml" />
     <Content Include="Views\Default1\Details.cshtml" />
     <Content Include="Views\Default1\Create.cshtml" />
