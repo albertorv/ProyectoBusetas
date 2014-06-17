@@ -1,2 +1,0 @@
-appBusetas/appBusetas/bin
-appBusetas/appBusetas/obj
