@@ -1,0 +1,53 @@
+﻿@model Buseta_DataAccess.RouteStudent
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>RouteStudent</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.routeId, "Route")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("routeId", String.Empty)
+            @Html.ValidationMessageFor(model => model.routeId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.studentId, "Student")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("studentId", String.Empty)
+            @Html.ValidationMessageFor(model => model.studentId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.orderInRoute)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.orderInRoute)
+            @Html.ValidationMessageFor(model => model.orderInRoute)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
