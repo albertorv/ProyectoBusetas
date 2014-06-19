@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Buseta_DataAccess.PersonInCharge>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Personal In Charge";
 }
 
 <body background="http://4.bp.blogspot.com/-to0HfqSc6PM/UE0R3kwu8OI/AAAAAAAAI9g/B8QfKohzKzA/s1600/Fondo+de+pantalla+oto%C3%B1o+1.jpg">
@@ -11,19 +11,19 @@
 <table id="tabla" class="table table-hover">
     <tr class="active">
         <th class="active">
-            @Html.DisplayNameFor(model => model.name)
+            <label>Name</label>
         </th>
         <th class="active">
-            @Html.DisplayNameFor(model => model.lastName)
+            <label>LastName</label>
         </th>
         <th class="active">
-            @Html.DisplayNameFor(model => model.email)
+            <label>Email</label>
         </th>
         <th class="active">
-            @Html.DisplayNameFor(model => model.telephone)
+            <label>Telephone</label>
         </th>
         <th class="active">
-            @Html.DisplayNameFor(model => model.address)
+            <label>Address</label>
         </th>
         <th> Maintenance</th>
     </tr>
@@ -51,7 +51,7 @@
             @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
             @Html.ActionLink("Details", "Details", new { id = item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.id })
-                </button>
+            </button>
         </td>
     </tr>
 }

@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Create";
 }
-
+<body id="BCreatStudent">
 <h2>Create</h2>
 
 @using (Html.BeginForm()) {
@@ -13,39 +13,39 @@
         <legend>Student</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.name)
+            <label>Name: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.name)
             @Html.ValidationMessageFor(model => model.name)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.lastName)
+        <div class="">
+            <label>LastName: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.lastName)
             @Html.ValidationMessageFor(model => model.lastName)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.age)
+        <div class="">
+            <label>Age: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.age)
             @Html.ValidationMessageFor(model => model.age)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.address)
+        <div class="">
+            <label>Address: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.address)
             @Html.ValidationMessageFor(model => model.address)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.telephone)
+        <div class="">
+            <label>Telephone: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.telephone)
@@ -53,15 +53,15 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.personInChargeId, "PersonInCharge")
+           <label>Persona in Charge: </label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("personInChargeId", String.Empty)
             @Html.ValidationMessageFor(model => model.personInChargeId)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.schoolId, "School")
+        <div class="">
+            <label>School: </label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("schoolId", String.Empty)
@@ -81,3 +81,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+</body>

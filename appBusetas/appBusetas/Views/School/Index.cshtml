@@ -1,21 +1,19 @@
 ﻿@model IEnumerable<Buseta_DataAccess.School>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "School Maintenance";
 }
+<body id="BEmployee">
+<h2>School Maintenance</h2>
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+<table id="tabla" class="table table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+           <label>Name</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.address)
+            <label>Address</label>
         </th>
         <th></th>
     </tr>
@@ -29,11 +27,16 @@
             @Html.DisplayFor(modelItem => item.address)
         </td>
         <td>
+           <button type="button" class=="btn btn-default"> 
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
+           </button>
         </td>
     </tr>
 }
-
 </table>
+    <button type="button" class=="btn btn-default">
+        @Html.ActionLink("Create New", "Create")
+    </button>
+</body>

@@ -1,30 +1,28 @@
 ﻿@model IEnumerable<Buseta_DataAccess.Employee>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Maintenance Employee";
 }
+<body id="BEmployee">
+<h2>Maintenance Employee</h2>
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+<table class="table table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+           <label>Name </label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.lastname)
+            <label>LastName </label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
+            <label>Email </label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.telephone)
+            <label>Telephone </label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EmployeeType.name)
+           <label>Employee Type </label>
         </th>
         <th></th>
     </tr>
@@ -55,3 +53,8 @@
 }
 
 </table>
+<br />
+ <button id="BtEmployee" type="button" class="btn btn-default">
+    @Html.ActionLink("Create New", "Create")
+</button>
+</body>

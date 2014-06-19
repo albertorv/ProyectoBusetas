@@ -12,16 +12,16 @@
     <fieldset>
         <legend>School</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.name)
+        <div class="">
+            <label>Name: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.name)
             @Html.ValidationMessageFor(model => model.name)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.address)
+        <div class="">
+            <label>Address: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.address)

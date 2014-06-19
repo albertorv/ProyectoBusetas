@@ -12,32 +12,32 @@
     <fieldset>
         <legend>PersonInCharge</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.name)
+        <div class="">
+            <label>Name: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.name)
             @Html.ValidationMessageFor(model => model.name)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.lastName)
+        <div class="">
+            <label>LastName: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.lastName)
             @Html.ValidationMessageFor(model => model.lastName)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.email)
+        <div class="">
+            <label>Email: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.email)
             @Html.ValidationMessageFor(model => model.email)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.telephone)
+        <div class="">
+           <label>Telephone: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.telephone)
@@ -45,7 +45,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.address)
+            <label>Address: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.address)

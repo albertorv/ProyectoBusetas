@@ -14,8 +14,8 @@
 
         @Html.HiddenFor(model => model.id)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.name)
+        <div class="">
+            <label>Name: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.name)
@@ -23,31 +23,31 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.lastname)
+           <label>LastName: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.lastname)
             @Html.ValidationMessageFor(model => model.lastname)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.email)
+        <div class="">
+            <label>Email: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.email)
             @Html.ValidationMessageFor(model => model.email)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.telephone)
+        <div class="">
+            <label>Telephone: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.telephone)
             @Html.ValidationMessageFor(model => model.telephone)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.employeeTypeId, "EmployeeType")
+        <div class="">
+            <label>Employee Type: </label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("employeeTypeId", String.Empty)

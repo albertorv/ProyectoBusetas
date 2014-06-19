@@ -14,24 +14,24 @@
 
         @Html.HiddenFor(model => model.id)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.name)
+        <div class="">
+           <label>Name: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.name)
             @Html.ValidationMessageFor(model => model.name)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.description)
+        <div class="">
+            <label>Description: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.description)
             @Html.ValidationMessageFor(model => model.description)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.salary)
+        <div class="">
+            <label>Salary: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.salary)

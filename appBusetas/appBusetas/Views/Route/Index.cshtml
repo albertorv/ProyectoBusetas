@@ -1,33 +1,31 @@
 ﻿@model IEnumerable<Buseta_DataAccess.Route>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Maintenance Route";
 }
+<body id="BEmployee">
+<h2>Maintenance Route</h2>
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+<table id="tabla" class="table table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Bus.brand)
+            <label>Bus</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RouteSchedule.dayOfTheWeek)
+            <label>Day of the Week</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.goingToSchool)
+            <label>Going To School</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.goingToHome)
+            <label>Going To Home</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employee1.name)
+            <label>Pilot</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employee.name)
+            <label>Employee</label>
         </th>
         <th></th>
     </tr>
@@ -53,11 +51,17 @@
             @Html.DisplayFor(modelItem => item.Employee.name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            <button type="button" class=="btn btn-default">
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </button>
         </td>
     </tr>
 }
 
 </table>
+    <button type="button" class=="btn btn-default">
+        @Html.ActionLink("Create New", "Create")
+    </button>
+</body>

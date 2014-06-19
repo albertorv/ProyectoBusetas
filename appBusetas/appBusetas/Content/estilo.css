@@ -1,9 +1,4 @@
 
-
-
-#cuerpo{
-background-color: #5F9F9F;
-}
 #texto{
 	border: solid;
 	border-radius: 5%;
@@ -13,43 +8,16 @@ background-color: #5F9F9F;
 	font-size: 150%;
 	font-family: Bookman Old Style;
 }
-#imagen{
-	height: 10%;
-	width: 50%;
-}
+
 #tabla{
 	width: 50%;
 	height: 60%;
-}
-#boton{
-	margin-right: 50px;
 }
 #contenedor{
 	border: solid;
 	width: 40%;
 	height: 50%;
       text-align: center;
-}
-.estilo_div1_log{
-	position: absolute;
-	height: 200px;
-	width: 300px;
-	left: 50%;
-	top: 50%;
-	margin-top: -100px;
-	margin-left: -150px;
-	background-color:#C5DCB7;
-	border-radius:30px; 
-	-moz-border-radius:30px; /* Firefox */ 
-	-webkit-border-radius:30px; /* Safari y Chrome */
-}
-.estilo_div2_log{
-	margin-left: 15%;
-	margin-right: 35%;
-}
-.body{
-	background-color: #99E1DD;
-	
 }
 .estilo_div1_log2{
 	height: 600px;
@@ -135,11 +103,6 @@ article{
   background: -o-linear-gradient(left, black, #eee, black);
 }
 
- 
-
-
-
-
 .img-circle{
 	margin-left: 75%;
 	margin-top: -30%;
@@ -185,4 +148,30 @@ background-color: #70D8D5;
 
 #boton{
 	margin-right: 50px;
+}
+
+
+#title1{
+    text-align:center;
+    background-color:aliceblue;
+}
+
+#BEmployee {
+   background-color:#99dc5e;
+}
+
+#BtEmployee {
+    text-align:right;
+}
+
+.LBBus {
+    color:white;
+    font-size:18px;
+}
+#HCreatB {
+    color:coral;
+}
+
+#BCreatStudent {
+    background-color:crimson;
 }
