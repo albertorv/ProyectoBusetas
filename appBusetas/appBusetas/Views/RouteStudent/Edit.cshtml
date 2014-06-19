@@ -14,8 +14,8 @@
 
         @Html.HiddenFor(model => model.id)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.routeId, "Route")
+        <div class="">
+           <label>Route: </label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("routeId", String.Empty)
@@ -23,15 +23,15 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.studentId, "Student")
+            <label>Student: </label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("studentId", String.Empty)
             @Html.ValidationMessageFor(model => model.studentId)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.orderInRoute)
+        <div class="">
+            <label>Order in Route: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.orderInRoute)

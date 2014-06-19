@@ -14,8 +14,8 @@
 
         @Html.HiddenFor(model => model.id)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.busId, "Bus")
+        <div class="">
+            <label>Bus: </label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("busId", String.Empty)
@@ -23,39 +23,39 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.routeScheduleId, "RouteSchedule")
+            <label>Route Schedule: </label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("routeScheduleId", String.Empty)
             @Html.ValidationMessageFor(model => model.routeScheduleId)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.goingToSchool)
+        <div class="">
+            <label>Going to School: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.goingToSchool)
             @Html.ValidationMessageFor(model => model.goingToSchool)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.goingToHome)
+        <div class="">
+           <label>Going to Home: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.goingToHome)
             @Html.ValidationMessageFor(model => model.goingToHome)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.pilotId, "Employee1")
+        <div class="">
+            <label>Pilot: </label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("pilotId", String.Empty)
             @Html.ValidationMessageFor(model => model.pilotId)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.copilotId, "Employee")
+        <div class="">
+            <label>Employee: </label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("copilotId", String.Empty)
