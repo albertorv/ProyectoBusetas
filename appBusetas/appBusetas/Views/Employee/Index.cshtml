@@ -4,47 +4,47 @@
     ViewBag.Title = "Maintenance Employee";
 }
 <body id="BEmployee">
-<h2>Maintenance Employee</h2>
-
-
-<table class="table table-striped">
-    <tr>
-        <th>
+<h2><strong>Maintenance Employee</strong></h2>
+    <br />
+<center>
+<table id="tabla" class="table table-hover">
+    <tr class="active">
+        <th class="active">
            <label>Name </label>
         </th>
-        <th>
+        <th class="active">
             <label>LastName </label>
         </th>
-        <th>
+        <th class="active">
             <label>Email </label>
         </th>
-        <th>
+        <th class="active">
             <label>Telephone </label>
         </th>
-        <th>
+        <th class="active">
            <label>Employee Type </label>
         </th>
-        <th></th>
+        <th class="active"><label>Maintenance</label></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <tr class="success">
+        <td td class="active">
             @Html.DisplayFor(modelItem => item.name)
         </td>
-        <td>
+        <td td class="active">
             @Html.DisplayFor(modelItem => item.lastname)
         </td>
-        <td>
+        <td td class="active">
             @Html.DisplayFor(modelItem => item.email)
         </td>
-        <td>
+        <td td class="active">
             @Html.DisplayFor(modelItem => item.telephone)
         </td>
-        <td>
+        <td td class="active">
             @Html.DisplayFor(modelItem => item.EmployeeType.name)
         </td>
-        <td>
+        <td td class="active">
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
@@ -53,8 +53,10 @@
 }
 
 </table>
+ 
 <br />
  <button id="BtEmployee" type="button" class="btn btn-default">
     @Html.ActionLink("Create New", "Create")
 </button>
+    </center>
 </body>

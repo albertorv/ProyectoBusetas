@@ -3,34 +3,47 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
+<body background="http://www.guia-empresas.net/fondos/grandes/GE-fondo4.jpg">
+<center><h2>Details</h2></center>
 
 <fieldset>
-    <legend>EmployeeType</legend>
-
-    <div class="">
-         <label>Name: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.name)
-    </div>
-
-    <div class="">
-         <label>Description: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.description)
-    </div>
-
-    <div class="">
-         <label>Salary: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.salary)
-    </div>
+    <div class="display-label">
+        <div class="table-responsive">
+   <center>
+       <table id="tabla" class="table table-bordered">
+           <tr class="success">
+            <td class="">
+                 <label>Name: </label>
+            </td>
+            <td class="">
+                 <label>Description: </label>
+            </td>
+          
+            <td class="">
+                 <label>Salary: </label>
+            </td>
+               </tr>
+           <tr  class="success>
+              <td class="display-field">
+                @Html.DisplayFor(model => model.name)
+            </td>
+             <td class="display-field">
+                @Html.DisplayFor(model => model.description)
+            </td>
+              <td class="display-field">
+                @Html.DisplayFor(model => model.salary)
+            </td>
+           </tr>
+             </table>
+         </center>
+            </div>
+        </div>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<center>
+
+      <button type="submit"   class="btn btn-default" value="Create">
+        @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+       </button>
+  </center>
+ </body>

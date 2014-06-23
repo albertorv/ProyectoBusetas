@@ -5,34 +5,35 @@
 }
 
 <body id="BEmployee">
-<h2>Maintenance Employee Type</h2>
-
-<table class="table table-bordered">
-    <tr>
-        <th>
+<h2><strong>Maintenance Employee</strong></h2>
+    <br />
+    <center>
+<table id="tabla" class="table table-hover">
+    <tr class="active">
+        <th class="active">
             <label>Name</label>
         </th>
-        <th>
+        <th class="active">
             <label>Description</label>
         </th>
-        <th>
+        <th class="active">
             <label>Salary</label>
         </th>
-        <th></th>
+        <th class="active">Maintenance</th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <tr class="success">
+        <td class="active">
             @Html.DisplayFor(modelItem => item.name)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.description)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.salary)
         </td>
-        <td>
+        <td class="active">
             <button type="button" class=="btn btn-default">
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
@@ -47,4 +48,5 @@
     <button type="button" class="btn btn-default">
     @Html.ActionLink("Create New", "Create")
     </button>
+ </center>
 </body>

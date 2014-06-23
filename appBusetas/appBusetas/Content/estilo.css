@@ -67,10 +67,11 @@ section #conte{
     color: #70DBDB;
 
 }
-h3{
+h2,h3{
   font-family: Bookman Old Style;
   font-size: 25px;
   color:  #234578;
+  text-align:center;
   
 }
 
@@ -165,7 +166,7 @@ background-color: #70D8D5;
 .LBBus {
     color:white;
     font-size:16px;
-    font-family:'Agency FB';
+    font-family:Consolas;
 }
 #HCreatB {
     color:coral;
@@ -185,9 +186,14 @@ background-color: #70D8D5;
 .LBBus2 {
     color:black;
     font-size:16px;
-    font-family:'Agency FB';
+    font-family:Consolas;
 }
 
-#h2DelPerson {
+#h2DelPerson{
     color:white;
+}
+ETDelet {
+    color:white;
+    font-size:12px;
+    font-family:'Agency FB';
 }

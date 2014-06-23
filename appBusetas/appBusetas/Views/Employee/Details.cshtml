@@ -4,47 +4,63 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<body background="http://www.guia-empresas.net/fondos/grandes/GE-fondo4.jpg">
+<center><h2>Details</h2></center>
 
 <fieldset>
-    <legend>Employee</legend>
-
-    <div class="">
-         <label>Name: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.name)
-    </div>
-
-    <div class="">
-         <label>LastName: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.lastname)
-    </div>
-
-    <div class="">
+    <div class="display-label">
+        <div class="table-responsive">
+   <center>
+     <table id="tabla" class="table table-bordered">
+ <tr class="success"> 
+       <td class="">
+         <label>Employee´s Name: </label>
+       </td>
+       <td class="">
+         <label>Lastname: </label>
+       </td>
+      <td class="">
          <label>Email: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.email)
-    </div>
-
-    <div class="">
+       </td>
+      <td class="">
          <label>Telephone: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.telephone)
-    </div>
-
-    <div class="">
+       </td>
+     <td class="">
          <label>Employee Type: </label>
-    </div>
-    <div class="display-field">
+      </td>
+</tr>
+<tr class="success">
+    <td class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </td>
+
+    <td class="display-field">
+        @Html.DisplayFor(model => model.lastname)
+    </td>
+
+    <td class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </td>
+
+    
+    <td class="display-field">
+        @Html.DisplayFor(model => model.telephone)
+    </td>
+
+    <td class="display-field">
         @Html.DisplayFor(model => model.EmployeeType.name)
-    </div>
+    </td>
+</tr>
+        </table>
+       </center>
+            </div>
+        </div>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<center>
+
+      <button type="submit"   class="btn btn-default" value="Create">
+        @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+       </button>
+  </center>
+ </body>
