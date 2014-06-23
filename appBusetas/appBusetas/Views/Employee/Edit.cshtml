@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Edit";
 }
+<<<<<<< HEAD
 <body id="BCPerson" background="http://www.guia-empresas.net/fondos/grandes/GE-fondo8.jpg">   <center >
 <center><h2 id="HCreatB">Edit</h2></center>
 <br/>
@@ -14,46 +15,87 @@
         <div class="editor-label">
             <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3">Name: </label></div>
         
+=======
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Employee</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+>>>>>>> origin/Jose
         <div class="editor-field">
             @Html.EditorFor(model => model.name)
             @Html.ValidationMessageFor(model => model.name)
         </div>
+<<<<<<< HEAD
         </div>
         <div>
         <div class="editor-label">
            <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3">LastName: </label>
+=======
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lastname)
+>>>>>>> origin/Jose
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.lastname)
             @Html.ValidationMessageFor(model => model.lastname)
         </div>
+<<<<<<< HEAD
         </div>
         <div>
         <div class="editor-label">
             <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3">Email: </label>
+=======
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+>>>>>>> origin/Jose
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.email)
             @Html.ValidationMessageFor(model => model.email)
         </div>
+<<<<<<< HEAD
         </div>
         <div>
         <div class="editor-label">
             <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3">Telephone: </label>
+=======
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telephone)
+>>>>>>> origin/Jose
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.telephone)
             @Html.ValidationMessageFor(model => model.telephone)
         </div>
+<<<<<<< HEAD
         </div>
         <div>
         <div class="editor-label">
             <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3">Employee Type: </label>
+=======
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.employeeTypeId, "EmployeeType")
+>>>>>>> origin/Jose
         </div>
         <div class="editor-field">
             @Html.DropDownList("employeeTypeId", String.Empty)
             @Html.ValidationMessageFor(model => model.employeeTypeId)
         </div>
+<<<<<<< HEAD
         </div>
         </form>
         <br />
@@ -65,6 +107,18 @@
 }
 </body>
     
+=======
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+>>>>>>> origin/Jose
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
