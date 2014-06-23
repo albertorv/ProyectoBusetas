@@ -4,65 +4,66 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
+ <body id="BCPerson" background="http://www.guia-empresas.net/fondos/grandes/GE-fondo8.jpg">   <center >
+<center><h2 id="HCreatB">Edit</h2></center>
+<br/>
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>PersonInCharge</legend>
-
-        @Html.HiddenFor(model => model.id)
-
-        <div class="">
-            <label>Name: </label>
-        </div>
+    <form method="POST" role="form" id="formulario">
+        <div >
+            <div class="editor-label">
+            <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3" >Name: </label></div>
         <div class="editor-field">
             @Html.EditorFor(model => model.name)
             @Html.ValidationMessageFor(model => model.name)
         </div>
-
-        <div class="">
-            <label>LastName: </label>
         </div>
-        <div class="editor-field">
+        <div >
+            <div class="editor-label">
+            <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3">LastName: </label></div> 
+       <div class="editor-field">
             @Html.EditorFor(model => model.lastName)
             @Html.ValidationMessageFor(model => model.lastName)
         </div>
-
-        <div class="">
-           <label>Email: </label>
         </div>
+        <div >
+            <div class="editor-label">
+            <label class="LBBus2" "col-lg-2 control-label"  for="inputEmail3">Email:</label></div>
         <div class="editor-field">
             @Html.EditorFor(model => model.email)
             @Html.ValidationMessageFor(model => model.email)
         </div>
+         </div>
 
-        <div class="">
-            <label>Telephone: </label>
-        </div>
+        <div  >
+            <div class="editor-label">
+           <label class="LBBus2" "col-lg-2 control-label"  for="inputEmail3">Telephone: </label></div>
+        
         <div class="editor-field">
             @Html.EditorFor(model => model.telephone)
             @Html.ValidationMessageFor(model => model.telephone)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.address)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.address)
-            @Html.ValidationMessageFor(model => model.address)
         </div>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+        <div >
+            <div class="editor-label">
+                <label class="LBBus2" "col-lg-2 control-label"  for="inputEmail3">Address: </label>
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.address)
+                @Html.ValidationMessageFor(model => model.address)
+            </div>
+         </div>
+        </form>
+        <br />
+         <button type="submit"   class="btn btn-success" value="Save">Save</button>
+        <div>
+        @Html.ActionLink("Back to List", "Index")
+        </div>
+    </center>     
+</body>
+}    
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
