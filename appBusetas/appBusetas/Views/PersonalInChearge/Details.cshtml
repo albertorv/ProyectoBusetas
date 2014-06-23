@@ -3,48 +3,62 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
+<body background="http://www.guia-empresas.net/fondos/grandes/GE-fondo4.jpg">
+<center><h2>Details</h2></center>
 
 <fieldset>
-    <legend>PersonInCharge</legend>
+    <div class="display-label">
+        <div class="table-responsive">
+   <center>
+      <table id="tabla" class="table table-bordered">
+          <tr class="active">
+          <td > 
+              <label>Name</label>
+          </td>
+       <td > 
+            <label>LastName</label>
+        </td>
+         <td > 
+            <label>Email</label>
+        </td>
+           <td > 
+             <label>Telephone</label>
+        </td>
+        
+           <td > 
+            <label>Address</label>
+        </td>
+        </tr>
 
-    <div class="">
-         <label>Name: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.name)
-    </div>
-
-    <div class="">
-         <label>LastName: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.lastName)
-    </div>
-
-    <div class="">
-         <label>Email: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.email)
-    </div>
-
-    <div class="">
-         <label>Telephone: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.telephone)
-    </div>
-
-    <div class="">
-         <label>Address: </label>
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.address)
-    </div>
+        <tr class="active">
+             <td class="display-label"> 
+              @Html.DisplayFor(model => model.name)
+          </td>
+       <td class="display-label"> 
+            @Html.DisplayFor(model => model.lastName)
+        </td>
+         <td class="display-label"> 
+            @Html.DisplayFor(model => model.email)
+        </td>
+           <td class="display-label"> 
+             @Html.DisplayFor(model => model.telephone)
+        </td>
+       
+           <td class="display-label"> 
+             @Html.DisplayFor(model => model.address)
+        </td>
+        </tr>
+    
+    </table>
+</center>
+        </div>
+        </div>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+ <center>
+
+      <button type="submit"   class="btn btn-default" value="Create">
+        @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+       </button>
+  </center>
+    </body>

@@ -12,6 +12,7 @@
 #tabla{
 	width: 50%;
 	height: 60%;
+    text-align:center;
 }
 #contenedor{
 	border: solid;
@@ -84,9 +85,6 @@ article{
   text-align: center;
 }
  
-
-
-
 
 #h1{
 
@@ -166,12 +164,30 @@ background-color: #70D8D5;
 
 .LBBus {
     color:white;
-    font-size:18px;
+    font-size:16px;
+    font-family:'Agency FB';
 }
 #HCreatB {
     color:coral;
+    text-align:center;
 }
 
-#BCreatStudent {
-    background-color:crimson;
+#BCreatStudent  {
+    background-color:ButtonFace;
+}
+
+.BCPerson {
+        background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+}
+.LBBus2 {
+    color:black;
+    font-size:16px;
+    font-family:'Agency FB';
+}
+
+#h2DelPerson {
+    color:white;
 }
