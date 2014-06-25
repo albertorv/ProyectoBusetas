@@ -1,4 +1,5 @@
 
+
 #texto{
 	border: solid;
 	border-radius: 5%;
@@ -8,6 +9,20 @@
 	font-size: 150%;
 	font-family: Bookman Old Style;
 }
+
+#conte{
+	
+    text-align: center;
+    
+   
+}
+#texto1{
+	font-family: 'Blackadder ITC';
+     color:#234578;
+  
+   
+}
+
 
 #tabla{
 	width: 50%;
@@ -75,16 +90,6 @@ h2,h3{
   
 }
 
-article{
-  color: #234578;
-  background: #70DBDB;
-  border-radius: 0.5em;
-  min-height: 300px;
-  padding: 0.25em;
-  font-family: Arial;
-  font-size: 22px;
-  text-align: center;
-}
  
 
 #h1{
@@ -102,11 +107,6 @@ article{
   background: -o-linear-gradient(left, black, #eee, black);
 }
 
-.img-circle{
-	margin-left: 75%;
-	margin-top: -30%;
-
-}
 #inputEmail3{
 	margin-left: 15%;
 }
@@ -155,6 +155,8 @@ background-color: #70D8D5;
     background-color:aliceblue;
 }
 
+
+
 #BEmployee {
    background-color:#99dc5e;
 }
@@ -196,4 +198,10 @@ ETDelet {
     color:white;
     font-size:12px;
     font-family:'Agency FB';
+}
+
+#title {
+    font-family:'Bookman Old Style';
+    font-size:40px;
+    color:#081353
 }

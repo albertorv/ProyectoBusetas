@@ -4,16 +4,19 @@
     ViewBag.Title = "Delete";
 }
 
-    <body background="http://www.wallsave.com/wallpapers/1920x1200/oscuridad/77272/oscuridad-fondos-de-pantalla-minimalistas-hd-muy-buenos-compilado-77272.jpg">
+   
+    <body >
+           
+    
+    <center><h2 id="texto1">Delete</h2></center>
+        <br /> <br />
 
-    <center><h2>Delete</h2></center>
-
-
-    <div class="table-responsive">
+   
         <center>
 
-        <table id="tabla" class="table table-bordered">
-            <tr class="success">
+        <table id="tabla" class="table">
+             <thead>
+            <tr >
                
                 <td class="">
                    <label>Name: </label>
@@ -24,7 +27,9 @@
                 </td>
 
              </tr>
-  <tr class="success">
+           </thead>
+            <tbody>
+  <tr >
                <td class="display-field">
                       @Html.DisplayFor(model => model.name)
                 </td>
@@ -32,11 +37,13 @@
          @Html.DisplayFor(model => model.address)
                 </td>
       </tr>
+            </tbody>
    </table>
    </center>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
+        <input type="submit"class="btn btn-primary" value="Delete" /> |
         @Html.ActionLink("Back to List", "Index")
     </p>
 }
+   

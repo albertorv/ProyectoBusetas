@@ -3,26 +3,29 @@
 @{
     ViewBag.Title = "Details";
 }
-    <body background="http://www.fondox.net/wallpapers/fondo-color-verde-1782.jpg">
-<center><h2>Details</h2></center>
+     <body >
+        
+    
+<center><h2 id="texto1">Details</h2></center>
+<br /><br />
 
-<fieldset>
-    <legend>Bus</legend>
 
-    <div class="display-label">
-  <div class="table-responsive">
-        <table id="tabla" class="table table-bordered">
-            <tr class="active">
-                <td class="display-label">
-                        @Html.DisplayNameFor(model => model.brand)
-                </td>
-                <td class="display-label">
-                        @Html.DisplayNameFor(model => model.color)
-                    </td>
-                <td class="display-label">
-                        @Html.DisplayNameFor(model => model.capacity)
-                    </td>
-            </tr>
+   <center>
+<table id="tabla" class="table">
+     <thead >
+    <tr>
+        <th>
+           <label>Name</label>
+        </th>
+        <th>
+            <label>Address</label>
+        </th>
+        <th>
+            Mantenaince
+        </th>
+    </tr>
+ </thead>
+    <tbody >
             <tr class="active">
                <td class="display-field">
                         @Html.DisplayFor(model => model.brand)
@@ -38,15 +41,16 @@
 
 
             </tr>
+         </tbody >
         </table>
-    </div>
-        </div>
-</fieldset>
-    <center>
+    
 
-      <button type="submit"   class="btn btn-default" value="Create">
-    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-  </button>
+    <center>
+ 
+          
+            @Html.ActionLink("Edit", "Edit", new { id=Model.id }, new { @class= "btn btn-primary" })
+   
+        <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
+ 
     </center
     </body>

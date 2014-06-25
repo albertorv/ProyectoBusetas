@@ -4,42 +4,40 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
+<center><h2 id="texto1">Edit</h2></center>
+<br /><br />
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
+    <body >
 
-    <fieldset>
-        <legend>School</legend>
+    <center>
+    <form class="form-horizontal">
+	
+    
+        <div class="form-group">
+        <label>Name: </label></div>
 
-        @Html.HiddenFor(model => model.id)
-
-        <div class="">
-           <label>Name: </label>
-        </div>
-        <div class="editor-field">
+           <div class="editor-field">
+            
             @Html.EditorFor(model => model.name)
             @Html.ValidationMessageFor(model => model.name)
-        </div>
-
-        <div class="">
+            </div>
+        
+        <div class="form-group">
             <label>Address: </label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.address)
             @Html.ValidationMessageFor(model => model.address)
         </div>
+   </form>
+       <br /><br /> 
+    <input class="btn btn-primary" type="submit" value="Save" />
+    <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
+ </center>
+    </body>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
+}  
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

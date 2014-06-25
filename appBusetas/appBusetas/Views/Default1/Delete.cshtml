@@ -2,33 +2,37 @@
 
 @{
     ViewBag.Title = "Delete";
-}
-    <body background="http://www.wallsave.com/wallpapers/1920x1200/oscuridad/77272/oscuridad-fondos-de-pantalla-minimalistas-hd-muy-buenos-compilado-77272.jpg">
-<center><h2>Delete</h2></center>
+} <body>
+        
+    
+<center><h2 id="texto1">Delete</h2></center>
 
-<fieldset>
-    <div class="table-responsive">
+        <br /><br />
+  
         <center>
 
-        <table id="tabla" class="table table-bordered">
-            <tr class="success">
-                <td class="display-label">
-                        <label class="LBBus">Brand</label> 
+        <table id="tabla" class="table ">
+             <thead >
+            <tr >
+                <td >
+                        <label >Brand</label> 
                 </td>
 
-                <td class="display-label">
-                        <label class="LBBus">Color</label>
+                <td >
+                        <label >Color</label>
                     </td>
                   
                 
 
-                <td class="display-label">
-                       <label class="LBBus">Capacity</label>
+                <td>
+                       <label >Capacity</label>
                     </td>
                     
               
             </tr>
-            <tr class="success">
+                  </thead >
+             <tbody >
+            <tr >
                <td class="display-field">
                         @Html.DisplayFor(model => model.brand)
                </td>
@@ -43,19 +47,20 @@
 
 
             </tr>
+                 </tbody>
         </table>
             </center
-    </div>
-</fieldset>
+    
+
     <center>
 @using (Html.BeginForm())
 {
-    <p>
-        <input type="button"  class="btn btn-default" value="Delete" />
-        |
-       
-    <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
-    </p>
+        <center>
+        <input type="submit" class="btn btn-primary" value="Delete" />
+       <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
+        </center>
 }
-     </center>
+     </center
     </body>
+
+

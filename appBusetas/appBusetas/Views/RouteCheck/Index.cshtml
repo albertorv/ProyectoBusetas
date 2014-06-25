@@ -1,0 +1,50 @@
+﻿@model appBusetas.Models.RouteCheckModel
+@{
+    ViewBag.Title = "Bus Per Route";
+}
+<center><h2>Route/Bus</h2>
+
+</center>
+
+<body background="http://canadianstandard.com/wp-content/uploads/2014/01/elegant-abstract-blue-backgrounds-ppt.jpg">
+
+<center>
+<table id="tabla" class="table table-hover">
+    <thead>
+        <tr>
+            <td style="font-weight:bold">
+                Bus
+            </td>
+            <td style="font-weight:bold">
+               Schedule
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var item in Model.routes){
+        <tr>
+            <td>
+                  @Html.DisplayFor(modelItem => item.busId)
+                
+            </td>
+            <td>
+                 @Html.DisplayFor(modelItem => item.routeScheduleId)
+            </td>
+        </tr>   
+}
+    </tbody>
+</table>
+
+    </center>
+    <center> 
+        @using (Html.BeginForm()) {   
+    
+
+        @Html.EditorFor(model => model.SearchText)
+            <label style="font-family=gunship">Schedule ID</label>
+            <input type="submit" value="Buscar" />
+        }
+        
+
+    </center>
+    </body>
