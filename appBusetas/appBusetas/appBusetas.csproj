@@ -188,6 +188,7 @@
     <Compile Include="Controllers\EmployeeTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonalInCheargeController.cs" />
+    <Compile Include="Controllers\RouteCheckController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\RouteScheduleController.cs" />
     <Compile Include="Controllers\RouteStudentController.cs" />
@@ -198,6 +199,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\RouteCheckModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -315,6 +317,7 @@
     <Content Include="Views\RouteStudent\Create.cshtml" />
     <Content Include="Views\RouteStudent\Edit.cshtml" />
     <Content Include="Views\RouteStudent\Delete.cshtml" />
+    <Content Include="Views\RouteCheck\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

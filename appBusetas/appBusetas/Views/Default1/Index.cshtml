@@ -2,52 +2,55 @@
 
 @{
     ViewBag.Title = "Index";
-}
-    <body background="http://4.bp.blogspot.com/-to0HfqSc6PM/UE0R3kwu8OI/AAAAAAAAI9g/B8QfKohzKzA/s1600/Fondo+de+pantalla+oto%C3%B1o+1.jpg">
-<center><h2> Maintenance Bus</h2></center>
+} <body >
+
+ 
 
 
-<center>
-<table id="tabla" class="table table-hover">
-    <tr class="active">
-        <th class="active">
+        <center><h2> Maintenance Bus</h2></center>
+
+
+
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th >
             <label >Brand</label>
         </th>
-        <th class="active">
+        <th >
             <label >Color</label>
         </th>
-        <th class="active">
+        <th >
             <label>Capacity</label>
         </th>
         <th>
              Maintenance
         </th>
     </tr>
-
+</thead>
+    <tbody>
 @foreach (var item in Model) {
-    <tr class="success">
-        <td class="active">
+    <tr>
+        <td>
             @Html.DisplayFor(modelItem => item.brand)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.color)
         </td>
-        <td class="active">
+        <td>
             @Html.DisplayFor(modelItem => item.capacity)
         </td>
-        <td class="active">
-            <button type="button" class=="btn btn-default">
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-                </button>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class= "btn btn-primary" }) 
+            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class= "btn btn-primary" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.id }, new { @class= "btn btn-primary" })
         </td>
     </tr>
 }
+   </tbody>
+    @Html.ActionLink("Create New", "Create","",new { @class= "btn btn-primary" })
 
 </table>
-    <button type="button" class="btn btn-default">
-    @Html.ActionLink("Create New", "Create")
-</button>
-    </center>
     </body>
