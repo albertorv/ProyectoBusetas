@@ -1,16 +1,49 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="Content-Type" content="text/html />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/bootstrapcss")
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/estilo")
+
+    
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="js/jquery-1.6.js" ></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/cufon-replace.js"></script>
+    <script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>
+    <script type="text/javascript" src="js/Shanti_400.font.js"></script>
+    <script src="js/roundabout.js" type="text/javascript"></script>
+    <script src="js/roundabout_shapes.js" type="text/javascript"></script>
+    <script src="js/jquery.easing.1.2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="js/html5.js"></script>
+	<style type="text/css">
+		.bg {behavior:url(js/PIE.htc)}
+	</style>
+<![endif]-->
+<!--[if lt IE 7]>
+	<div style=' clear: both; text-align:center; position: relative;'>
+		<a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg" border="0"  alt="" /></a>
+	</div>
+<![endif]-->
 </head>
-<body>
-    <div class="container-fluid">
+    <body id="page1">
+        <div class="body1">
+	    
+<!-- header -->
+			<div class="wrapper">
+				<span class="date">Monday, June 6, 2011  &nbsp; &nbsp; 17:19</span>
+			</div>
+
+				
         <div class="row-fluid">
             <div class="container">
 
@@ -28,32 +61,31 @@
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav">
-
-                                <li class="active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Bus</a>
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav">
+        <li class="active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Bus</a>
 
                                     <ul class="dropdown-menu">
-                                        <li><a href="/Home">Home</a></li>
                                         <li><a href="/Default1">Bus Maintenance</a></li>
                                         <li><a href="/Route">Routes</a></li>
-                                        <li><a href="/RouteSchool">Route School</a></li>
+                                        <li><a href="/RouteSchedule">Route Schedule</a></li>
                                         <li><a href="/RouteStudent">Route Student</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrator</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/Home">Home</a></li>
+                                       
                                         <li><a href="/Student">Student</a></li>                                  
                                         <li><a href="/PersonalInChearge">Personal in Charge</a></li>
                                         <li><a href="/School">School</a></li>
                                         <li><a href="/Employee">Employee</a></li>
                                         <li><a href="/EmployeeType">Employee Type</a></li>
+                                        <li><a href="/User">Users</a></li>
                                         </ul>
                                 </li>
                                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Co-pilot</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="/RouteCheck">Route Check</a></li>
+                                        <li><a href="/Cargo">Cargo</a></li>
                                     </ul>
 
                                 </li>
@@ -65,21 +97,42 @@
                     <!-- /.container-fluid -->
                 </nav>
             </div>
-        </div>
-    </div>
+        </div>	
+</div>
     <div class="span9">
         @RenderSection("featured", required: false)
         <div class="row-fluid">
             @RenderBody()
         </div>
     </div>
-
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrapjs")
     @Scripts.Render("~/bundles/jqueryval")
-
     @RenderSection("scripts", required: false)
 
+<script type="text/javascript"> Cufon.now();</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myRoundabout').roundabout({
+            shape: 'square',
+            minScale: 0.89, // tiny!
+            maxScale: 1, // tiny!
+            easing: 'easeOutExpo',
+            clickToFocus: 'true',
+            focusBearing: '0',
+            duration: 800,
+            reflect: true
+        });
+    });
+</script>
+        <div class="main">
+<!-- footer -->
+    <footer>
+        <a rel="nofollow" href="http://webgeekcrc.com/" target="_blank">WebGeek</a> by WebGeekcrc.com<br>
+        <a href="http://webgeekcrc.com/" target="_blank">WebGeek</a> provided by WebGeekcrc.com
+        <!-- {%FOOTER_LINK} -->
+    </footer>
+<!-- / footer -->
+ </div>
 </body>
 </html>

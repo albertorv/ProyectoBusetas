@@ -3,33 +3,35 @@
 @{
     ViewBag.Title = "Edit";
 }
-
- <body id="BCPerson" background="http://www.guia-empresas.net/fondos/grandes/GE-fondo8.jpg">   <center >
-<center><h2 id="HCreatB">Edit</h2></center>
-<br/>
-@using (Html.BeginForm()) {
+<body id="page1">
+    @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-
-    <form method="POST" role="form" id="formulario">
-        <div >
-            <div class="editor-label">
-            <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3" >Name: </label></div>
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Edit</h2></center>
+        <br /><br />
+   <center>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="form-group">
+            <label >Name</label></div>
         <div class="editor-field">
             @Html.EditorFor(model => model.name)
             @Html.ValidationMessageFor(model => model.name)
         </div>
         </div>
         <div >
-            <div class="editor-label">
-            <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3">LastName: </label></div> 
+            <div class="form-group">
+            <label >LastName</label></div> 
        <div class="editor-field">
             @Html.EditorFor(model => model.lastName)
             @Html.ValidationMessageFor(model => model.lastName)
         </div>
         </div>
         <div >
-            <div class="editor-label">
-            <label class="LBBus2" "col-lg-2 control-label"  for="inputEmail3">Email:</label></div>
+            <div class="form-group">
+            <label >Email</label></div>
         <div class="editor-field">
             @Html.EditorFor(model => model.email)
             @Html.ValidationMessageFor(model => model.email)
@@ -38,7 +40,7 @@
 
         <div  >
             <div class="editor-label">
-           <label class="LBBus2" "col-lg-2 control-label"  for="inputEmail3">Telephone: </label></div>
+           <label >Telephone: </label></div>
         
         <div class="editor-field">
             @Html.EditorFor(model => model.telephone)
@@ -57,16 +59,18 @@
          </div>
         </form>
         <br />
-         <button type="submit"   class="btn btn-success" value="Save">Save</button>
-        <div>
-        @Html.ActionLink("Back to List", "Index")
+       <button type="submit"   class="btn btn-success" value="Save">Save</button>
+        <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
+       
+        </center>
+    </header>
         </div>
+       </div>
+    }
+  
     
-
-}
-       </center>   
      </body>
-
+    
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -3,27 +3,32 @@
 @{
     ViewBag.Title = "Delete";
 }
-<body background="http://www.wallsave.com/wallpapers/1920x1200/oscuridad/77272/oscuridad-fondos-de-pantalla-minimalistas-hd-muy-buenos-compilado-77272.jpg">
-
-<center> <h2 id="h2DelPerson">Delete</h2> </center>
+<body id="page1">
+    @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Edit</h2></center>
+        <br /><br />
+   <center>
     <div class="table-responsive">
-        <center>
         <table id="tabla" class="table table-bordered">
             <tr class="success"> 
-                <td class="">
-                  <label>Name: </label>
+                <td class="active">
+                  <label>Name</label>
                 </td>
-                <td class="">
-                       <label>LastName: </label>
+                <td class="active">
+                       <label>LastName</label>
                 </td>
-               <td class="">
-                    <label>Email: </label>
+               <td class="active">
+                    <label>Email</label>
                 </td>
-                <td class="">
-        <label>Telephone: </label>
+                <td class="active">
+        <label>Telephone</label>
                 </td>
 
-                  <td class="">
+                  <td class="active">
          <label>Address: </label>
                 </td>
             </tr>
@@ -47,13 +52,21 @@
 
             </tr>
         </table>
-            </center
+           
     </div>
-
-    <center>
+       
 @using (Html.BeginForm())
 {
-     <button type="submit"   class="btn btn-success" value="Delete">Delete</button> 
-     <button type="submit"   class="btn btn-success" value="Create"> @Html.ActionLink("Back to List", "Index")</button>
+      <center>
+        <button type="submit" class="btn btn-success" value="Delete"> Delete </button>
+       <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
+        </center>
 }
+        </center>
+        </header>
+        </div>
+       </div>
+        <br /><br />
+       
+    }
 </body>

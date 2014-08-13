@@ -1,0 +1,64 @@
+﻿@model Buseta_DataAccess.cargo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>cargo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cargo_Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cargo_Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Student.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Student.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.check_in)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.check_in)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.check_out)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.check_out)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Arrival)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Arrival)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Departure)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Departure)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bus.brand)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bus.brand)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

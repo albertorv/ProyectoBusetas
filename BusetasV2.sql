@@ -1,4 +1,5 @@
-
+use master
+go
 create database Busetas
 go
 use Busetas
@@ -19,8 +20,6 @@ EndTime Time,
 constraint pk_RouteScheduleId primary key(id)
 )
 go
-
-
 create table EmployeeType(
 id int identity, 
 name varchar(100), 
@@ -39,7 +38,6 @@ constraint pk_EmployeeId primary key (id),
 constraint fk_Employee_EmployeeTypeId foreign key (employeeTypeId) references EmployeeType(id)
 )
 go
-
 create table Route(
 id int identity, 
 busId int, 
@@ -107,4 +105,22 @@ add constraint fk_Route_CopilotId foreign key (copilotId) references Employee(id
 alter table EmployeeType
 add salary decimal
 
+create table Users(
+id int,
+[user] varchar (50),
+[password] varchar (50),
+constraint pk_UsersId primary key(id)
+)
 
+create table cargo(
+cargo_Id int,
+studentId int,
+check_in char,
+check_out char,
+Arrival datetime,
+Departure datetime,
+Bus_Id int,
+constraint pk_cargo_Id primary key(cargo_Id),
+constraint fk_cargo_student foreign key (studentId) references student(id),
+constraint fk_cargo_bus foreign key (Bus_Id) references Bus(id)
+)

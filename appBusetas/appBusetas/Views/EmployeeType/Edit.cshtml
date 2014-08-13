@@ -3,28 +3,29 @@
 @{
     ViewBag.Title = "Edit";
 }
-
-<body id="BCPerson" background="http://www.guia-empresas.net/fondos/grandes/GE-fondo8.jpg"> <center >
-<center><h2 id="HCreatB">Edit</h2></center>
-<br/>
-@using (Html.BeginForm()) {
+<body id="page1">
+    @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-
-    @Html.HiddenFor(model => model.id)
-    <center>
-    <form method="POST" role="form" id="formulario">
-        <div>
-            <div class="editor-label">
-               <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3">Name: </label>
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Edit</h2></center>
+        <br /><br />
+   <center>
+       
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="form-group">
+               <label >Name</label>
             </div>
-            <div class="editor-field">
+            <div class="form-group">
                 @Html.EditorFor(model => model.name)
                 @Html.ValidationMessageFor(model => model.name)
             </div>
         </div>
         <div>
-            <div class="editor-label">
-                <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3">Description: </label>
+            <div class="form-group">
+                <label>Description</label>
             </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.description)
@@ -32,21 +33,24 @@
             </div>
         </div>
         <div>
-            <div class="editor-label" >
-                <label class="LBBus2" "col-lg-2 control-label" for="inputEmail3">Salary: </label>
+            <div class="form-group" >
+                <label >Salary</label>
             </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.salary)
                 @Html.ValidationMessageFor(model => model.salary)
             </div>
         </div>
-        <</form>
+        </form>
         <br />
          <button type="submit"   class="btn btn-success" value="Save">Save</button>
-        <div>
-        @Html.ActionLink("Back to List", "Index")
+    <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
+    </center> 
+        
+        </header>  
         </div>
-    </center>     
+       </div>
+         
 }
 </body>
     

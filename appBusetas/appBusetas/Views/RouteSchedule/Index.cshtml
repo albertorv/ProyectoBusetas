@@ -4,42 +4,55 @@
     ViewBag.Title = "Route Schedule Maintenance";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.dayOfTheWeek)
+<body id="page1">
+   <div class="body1">
+   <div class="main">
+    <center>
+        <header>
+            <h2><strong>Maintenance Route Schedule</strong></h2>
+        <br /><br />
+<table id="tabla" class="table table-bordered">
+    <tr class="active">
+        <th class="active">
+            <label>Day of Week</label>
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StartTime)
+        <th class="active">
+           <label>Start Time</label>
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndTime)
+        <th class="active">
+            <label>End Time</label>
         </th>
-        <th></th>
+        <th class="active"><label>Maintenance</label></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <tr class="success">
+        <td class="active">
             @Html.DisplayFor(modelItem => item.dayOfTheWeek)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.StartTime)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.EndTime)
         </td>
-        <td>
+        <td class="active">
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
 }
 
 </table>
+    <button id="BtEmployee" type="button" class="btn btn-default">
+    @Html.ActionLink("Create New", "Create")
+    </button>
+ </header>
+<br />
+ 
+    </center>
+       </div>
+        </div>
+    
+</body>

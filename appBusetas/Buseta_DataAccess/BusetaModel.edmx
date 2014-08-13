@@ -4,9 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BusetasModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BusetasModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="BusetasModelStoreContainer">
           <EntitySet Name="Bus" EntityType="BusetasModel.Store.Bus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cargo" EntityType="BusetasModel.Store.cargo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Employee" EntityType="BusetasModel.Store.Employee" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="EmployeeType" EntityType="BusetasModel.Store.EmployeeType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersonInCharge" EntityType="BusetasModel.Store.PersonInCharge" store:Type="Tables" Schema="dbo" />
@@ -15,6 +16,15 @@
           <EntitySet Name="RouteStudent" EntityType="BusetasModel.Store.RouteStudent" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="School" EntityType="BusetasModel.Store.School" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Student" EntityType="BusetasModel.Store.Student" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="BusetasModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="fk_cargo_bus" Association="BusetasModel.Store.fk_cargo_bus">
+            <End Role="Bus" EntitySet="Bus" />
+            <End Role="cargo" EntitySet="cargo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cargo_student" Association="BusetasModel.Store.fk_cargo_student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="cargo" EntitySet="cargo" />
+          </AssociationSet>
           <AssociationSet Name="fk_Employee_EmployeeTypeId" Association="BusetasModel.Store.fk_Employee_EmployeeTypeId">
             <End Role="EmployeeType" EntitySet="EmployeeType" />
             <End Role="Employee" EntitySet="Employee" />
@@ -60,6 +70,18 @@
           <Property Name="brand" Type="varchar" MaxLength="100" />
           <Property Name="color" Type="varchar" MaxLength="100" />
           <Property Name="capacity" Type="int" />
+        </EntityType>
+        <EntityType Name="cargo">
+          <Key>
+            <PropertyRef Name="cargo_Id" />
+          </Key>
+          <Property Name="cargo_Id" Type="int" Nullable="false" />
+          <Property Name="studentId" Type="int" />
+          <Property Name="check_in" Type="char" MaxLength="1" />
+          <Property Name="check_out" Type="char" MaxLength="1" />
+          <Property Name="Arrival" Type="datetime" />
+          <Property Name="Departure" Type="datetime" />
+          <Property Name="Bus_Id" Type="int" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -143,6 +165,38 @@
           <Property Name="personInChargeId" Type="int" />
           <Property Name="schoolId" Type="int" />
         </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="user" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="fk_cargo_bus">
+          <End Role="Bus" Type="BusetasModel.Store.Bus" Multiplicity="0..1" />
+          <End Role="cargo" Type="BusetasModel.Store.cargo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cargo">
+              <PropertyRef Name="Bus_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cargo_student">
+          <End Role="Student" Type="BusetasModel.Store.Student" Multiplicity="0..1" />
+          <End Role="cargo" Type="BusetasModel.Store.cargo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cargo">
+              <PropertyRef Name="studentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_Employee_EmployeeTypeId">
           <End Role="EmployeeType" Type="BusetasModel.Store.EmployeeType" Multiplicity="0..1" />
           <End Role="Employee" Type="BusetasModel.Store.Employee" Multiplicity="*" />
@@ -251,8 +305,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BusetasModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -302,6 +355,16 @@
             <End Role="School" EntitySet="School" />
             <End Role="Student" EntitySet="Student" />
           </AssociationSet>
+          <EntitySet Name="Users" EntityType="BusetasModel.Users" />
+          <EntitySet Name="cargo" EntityType="BusetasModel.cargo" />
+          <AssociationSet Name="fk_cargo_bus" Association="BusetasModel.fk_cargo_bus">
+            <End Role="Bus" EntitySet="Bus" />
+            <End Role="cargo" EntitySet="cargo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cargo_student" Association="BusetasModel.fk_cargo_student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="cargo" EntitySet="cargo" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Bus">
           <Key>
@@ -312,6 +375,7 @@
           <Property Name="color" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="capacity" Type="Int32" />
           <NavigationProperty Name="Route" Relationship="BusetasModel.fk_Route_BusId" FromRole="Bus" ToRole="Route" />
+          <NavigationProperty Name="cargo" Relationship="BusetasModel.fk_cargo_bus" FromRole="Bus" ToRole="cargo" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -411,6 +475,7 @@
           <NavigationProperty Name="PersonInCharge" Relationship="BusetasModel.fk_Student_PersonInChargeId" FromRole="Student" ToRole="PersonInCharge" />
           <NavigationProperty Name="RouteStudent" Relationship="BusetasModel.fk_RouteStudent_StudentId" FromRole="Student" ToRole="RouteStudent" />
           <NavigationProperty Name="School" Relationship="BusetasModel.fk_Student_SchoolId" FromRole="Student" ToRole="School" />
+          <NavigationProperty Name="cargo" Relationship="BusetasModel.fk_cargo_student" FromRole="Student" ToRole="cargo" />
         </EntityType>
         <Association Name="fk_Route_BusId">
           <End Role="Bus" Type="BusetasModel.Bus" Multiplicity="0..1" />
@@ -520,6 +585,52 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="user" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="password" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="cargo">
+          <Key>
+            <PropertyRef Name="cargo_Id" />
+          </Key>
+          <Property Type="Int32" Name="cargo_Id" Nullable="false" />
+          <Property Type="Int32" Name="studentId" />
+          <Property Type="String" Name="check_in" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="check_out" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="Arrival" Precision="3" />
+          <Property Type="DateTime" Name="Departure" Precision="3" />
+          <Property Type="Int32" Name="Bus_Id" />
+          <NavigationProperty Name="Bus" Relationship="BusetasModel.fk_cargo_bus" FromRole="cargo" ToRole="Bus" />
+          <NavigationProperty Name="Student" Relationship="BusetasModel.fk_cargo_student" FromRole="cargo" ToRole="Student" />
+        </EntityType>
+        <Association Name="fk_cargo_bus">
+          <End Type="BusetasModel.Bus" Role="Bus" Multiplicity="0..1" />
+          <End Type="BusetasModel.cargo" Role="cargo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cargo">
+              <PropertyRef Name="Bus_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cargo_student">
+          <End Type="BusetasModel.Student" Role="Student" Multiplicity="0..1" />
+          <End Type="BusetasModel.cargo" Role="cargo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cargo">
+              <PropertyRef Name="studentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -623,6 +734,28 @@
                 <ScalarProperty Name="telephone" ColumnName="telephone" />
                 <ScalarProperty Name="personInChargeId" ColumnName="personInChargeId" />
                 <ScalarProperty Name="schoolId" ColumnName="schoolId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="BusetasModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="user" ColumnName="user" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cargo">
+            <EntityTypeMapping TypeName="BusetasModel.cargo">
+              <MappingFragment StoreEntitySet="cargo">
+                <ScalarProperty Name="Bus_Id" ColumnName="Bus_Id" />
+                <ScalarProperty Name="Departure" ColumnName="Departure" />
+                <ScalarProperty Name="Arrival" ColumnName="Arrival" />
+                <ScalarProperty Name="check_out" ColumnName="check_out" />
+                <ScalarProperty Name="check_in" ColumnName="check_in" />
+                <ScalarProperty Name="studentId" ColumnName="studentId" />
+                <ScalarProperty Name="cargo_Id" ColumnName="cargo_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

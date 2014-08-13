@@ -3,34 +3,30 @@
 @{
     ViewBag.Title = "Delete";
 }
-
-   
-    <body >
-           
-    
-    <center><h2 id="texto1">Delete</h2></center>
-        <br /> <br />
-
-   
+<body id="page1">
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Delete</h2></center>
+        <br /><br />
         <center>
-
-        <table id="tabla" class="table">
+        <table class="table table-bordered">
              <thead>
-            <tr >
+            <tr class="active">
                
-                <td class="">
-                   <label>Name: </label>
+                <td class="active">
+                   <label>Name</label>
                 </td>
                 
-                  <td class="">
-                    <label>Address: </label>
+                  <td class="active">
+                    <label>Address</label>
                 </td>
 
              </tr>
            </thead>
             <tbody>
-  <tr >
-               <td class="display-field">
+  <tr class="success">
+           <td class="display-field">
                       @Html.DisplayFor(model => model.name)
                 </td>
        <td class="display-field">
@@ -41,9 +37,16 @@
    </table>
    </center>
 @using (Html.BeginForm()) {
-    <p>
-        <input type="submit"class="btn btn-primary" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+     <center>
+        <button type="submit" class="btn btn-success" value="Delete"> Delete </button>
+       <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
+        </center>
 }
+        </center>
+        </header>
+        </div>
+       </div>
+        <br /><br />
+        
+    </body>
    

@@ -2,32 +2,32 @@
 @{
     ViewBag.Title = "Bus Per Route";
 }
-<center><h2>Route/Bus</h2>
-
-</center>
-
-<body background="http://canadianstandard.com/wp-content/uploads/2014/01/elegant-abstract-blue-backgrounds-ppt.jpg">
-
-<center>
-<table id="tabla" class="table table-hover">
+  <body id="page1">
+    <div class="body1">
+   <div class="main">
+   <header>
+        <center><h2>Route/Bus</h2></center>
+        <br /><br />
+   <center>
+<table id="tabla" class="table table-bordered">
     <thead>
-        <tr>
-            <td style="font-weight:bold">
-                Bus
+        <tr class="active">
+            <td class="active">
+                <label>Bus</label>
             </td>
-            <td style="font-weight:bold">
-               Schedule
+            <td class="active">
+               <label>Schedule</label>
             </td>
         </tr>
     </thead>
     <tbody>
 @foreach(var item in Model.routes){
-        <tr>
-            <td>
+        <tr class="success">
+            <td td class="active">
                   @Html.DisplayFor(modelItem => item.busId)
                 
             </td>
-            <td>
+            <td td class="active">
                  @Html.DisplayFor(modelItem => item.routeScheduleId)
             </td>
         </tr>   
@@ -41,10 +41,14 @@
     
 
         @Html.EditorFor(model => model.SearchText)
-            <label style="font-family=gunship">Schedule ID</label>
+            <label style="font-family:gunship">Schedule ID</label>
             <input type="submit" value="Buscar" />
         }
         
-
     </center>
+       </header>
+       </div>
+        </div>
+      
+    
     </body>

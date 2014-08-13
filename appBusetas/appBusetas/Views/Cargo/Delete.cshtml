@@ -1,0 +1,75 @@
+﻿@model Buseta_DataAccess.cargo
+
+@{
+    ViewBag.Title = "Delete";
+}
+ <body id="page1">
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Delete</h2></center>
+        <br /><br />
+        <center>
+  <form class="form-horizontal">
+    <div class="form-group">
+         <label>Cargo ID</label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cargo_Id)
+    </div>
+
+    <div class="form-group">
+        <label>Name</label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Student.name)
+    </div>
+
+    <div class="form-group">
+        <label>Check In</label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.check_in)
+    </div>
+
+    <div class="form-group">
+         <label>Check Out</label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.check_out)
+    </div>
+
+    <div class="form-group">
+         <label>Arrival</label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Arrival)
+    </div>
+
+    <div class="form-group">
+        <label>Departure</label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Departure)
+    </div>
+
+    <div class="form-group">
+         <label>Bus</label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bus.brand)
+    </div>
+</form>
+@using (Html.BeginForm()) {
+   <center>
+        <button type="submit" class="btn btn-success" value="Delete"> Delete </button>
+       <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
+        </center>
+}
+</center>
+        </header>
+        </div>
+       </div>
+        <br /><br />
+       
+    </body>

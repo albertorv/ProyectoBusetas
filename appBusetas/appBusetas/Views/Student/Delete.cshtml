@@ -4,40 +4,39 @@
     ViewBag.Title = "Delete";
 }
 
-  <body>
-
-    <center><h2 id="texto1">Delete</h2></center>
-      <br />
-
-   
+ <body id="page1">
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Delete</h2></center>
+        <br /><br />
         <center>
-
-        <table id="tabla" class="table ">
+        <table  class="table table-bordered">
             <thead>
-            <tr >
+            <tr class="active">
                
-                <td >
+                <td class="active">
                     <label>Student Name</label>
                 </td>
-               <td >
+               <td class="active">
                     <label>Student LastName</label>
                 </td>
-                <td >
+                <td class="active">
                     <label>Student Age</label>
                 </td>
 
 
-                  <td >
+                  <td class="active">
                     <label>Student Telephone</label>
                 </td>
 
-                 <td >
+                 <td class="active">
                     <label>Student Andress</label>
                 </td>
-                <td >
+                <td class="active">
                     <label>Personal In Chearge</label>
                 </td>
-               <td >
+               <td class="active">
                     <label>School</label>
                 </td>
                 
@@ -45,7 +44,7 @@
              </tr>
                 </thead>
             <tbody>
-  <tr >
+  <tr class="success">
                <td class="display-field">
                       @Html.DisplayFor(model => model.name)
                 </td>
@@ -73,8 +72,15 @@
    </table>
    </center>
 @using (Html.BeginForm()) {
-      <center>
-        <input type="submit" class="btn btn-primary" value="Delete" />
+       <center>
+        <button type="submit" class="btn btn-success" value="Delete"> Delete </button>
        <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
         </center>
 }
+        </center>
+        </header>
+        </div>
+       </div>
+        <br /><br />
+       
+    </body>

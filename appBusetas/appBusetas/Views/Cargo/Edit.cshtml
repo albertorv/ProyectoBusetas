@@ -1,0 +1,82 @@
+﻿@model Buseta_DataAccess.cargo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<body id="page1">
+    @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Edit</h2></center>
+        <br /><br />
+   <center>
+       
+    <form class="form-horizontal">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cargo_Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cargo_Id)
+            @Html.ValidationMessageFor(model => model.cargo_Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.studentId, "Student")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("studentId", String.Empty)
+            @Html.ValidationMessageFor(model => model.studentId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.check_in)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.check_in)
+            @Html.ValidationMessageFor(model => model.check_in)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.check_out)
+        </div>
+         <div class="editor-field">
+         @Html.EditorFor(model => model.check_out)
+          @Html.ValidationMessageFor(model => model.check_out)
+    </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Arrival)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Arrival)
+            @Html.ValidationMessageFor(model => model.Arrival)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bus_Id, "Bus")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Bus_Id", String.Empty)
+            @Html.ValidationMessageFor(model => model.Bus_Id)
+        </div>
+
+        </form>
+    <br />
+    <button type="submit"   class="btn btn-success" value="Save">Save</button>
+    <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
+       
+ </center>
+        </header>
+        </div>
+       </div>
+
+       }
+</body>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

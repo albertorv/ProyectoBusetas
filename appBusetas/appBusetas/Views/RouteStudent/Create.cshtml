@@ -4,47 +4,50 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>RouteStudent</legend>
-
-        <div class="">
-            <label>Route: </label>
+<body id="page1">
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Create</h2></center>
+        <br /><br />
+   <center>
+  <form class="form-horizontal">
+        <div class="form-group">
+            <label>Route</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("routeId", String.Empty)
             @Html.ValidationMessageFor(model => model.routeId)
         </div>
 
-        <div class="">
-            <label>Student: </label>
+        <div class="form-group">
+            <label>Student</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("studentId", String.Empty)
             @Html.ValidationMessageFor(model => model.studentId)
         </div>
 
-        <div class="">
-            <label>Order in Route: </label>
+        <div class="form-group">
+            <label>Order in Route</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.orderInRoute)
             @Html.ValidationMessageFor(model => model.orderInRoute)
         </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+      </form>
+       <br />
+         <button type="submit"   class="btn btn-primary" value="Create">Create</button> |
+        <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
+    
+   </center>
+       </header>
+       
+       </div>
+        </div>
+    
+    
+</body>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

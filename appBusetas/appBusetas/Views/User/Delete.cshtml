@@ -1,0 +1,41 @@
+﻿@model Buseta_DataAccess.Users
+
+@{
+    ViewBag.Title = "Delete";
+}
+<body id="page1">
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Delete</h2></center>
+        <br /><br />
+        <center>
+<form class="form-horizontal">
+    <div class="display-label">
+        <label>User</label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.user)
+    </div>
+
+    <div class="display-label">
+         <label>Password</label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.password)
+    </div>
+</form>
+
+@using (Html.BeginForm()) {
+    <center>
+        <button type="submit" class="btn btn-success" value="Delete"> Delete </button>
+       <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
+     </center>
+}
+ </center>
+        </header>
+        </div>
+       </div>
+        <br /><br />
+        
+    </body>

@@ -1,0 +1,69 @@
+﻿@model Buseta_DataAccess.cargo
+
+@{
+    ViewBag.Title = "Create";
+}
+<body id="page1">
+     @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+   <div class="body1">
+   <div class="main">
+       <header>
+<center><h2 >Create</h2></center>
+        <br /><br />
+    <center>
+        <div class="editor-label">
+           <label>Cargo ID</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cargo_Id)
+            @Html.ValidationMessageFor(model => model.cargo_Id)
+        </div>
+
+        <div class="editor-label">
+           <label>Student</label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("studentId", String.Empty)
+            @Html.ValidationMessageFor(model => model.studentId)
+        </div>
+
+        <div class="editor-label">
+           <label>Check In</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.check_in)
+            @Html.ValidationMessageFor(model => model.check_in)
+        </div>
+
+        <div class="editor-label">
+           <label>Arrival</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Arrival)
+            @Html.ValidationMessageFor(model => model.Arrival)
+        </div>
+
+
+        <div class="editor-label">
+           <label>Bus</label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Bus_Id", String.Empty)
+            @Html.ValidationMessageFor(model => model.Bus_Id)
+        </div>
+        <br />
+    <button type="submit"   class="btn btn-primary" value="Create">Create</button> |
+        <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
+        
+    </center>
+        </header>
+       
+       </div>  
+    </div>
+   
+     }
+   </body> 
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

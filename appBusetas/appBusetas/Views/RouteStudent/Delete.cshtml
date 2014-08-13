@@ -3,37 +3,50 @@
 @{
     ViewBag.Title = "Delete";
 }
-
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>RouteStudent</legend>
-
-    <div class="">
-        <label>Route: </label>
+ <body id="page1">
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Delete</h2></center>
+        <br /><br />
+        <center>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label>Route</label>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Route.id)
     </div>
 
-    <div class="">
-        <label>Student: </label>
+    <div class="form-group">
+        <label>Student</label>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Student.name)
     </div>
 
-    <div class="">
-         <label>Order in Route: </label>
+    <div class="form-group">
+         <label>Order in Route </label>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.orderInRoute)
     </div>
-</fieldset>
+    
+    </form>
+
+           
 @using (Html.BeginForm()) {
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    <center>
+        <button type="submit" class="btn btn-success" value="Delete"> Delete </button>
+       <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
+        </center>
 }
+            
+    </center>
+        <br /><br />
+       
+        </header>
+       </div>
+       
+        </div>
+    </body>

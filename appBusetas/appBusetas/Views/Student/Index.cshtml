@@ -3,75 +3,83 @@
 @{
     ViewBag.Title = "Index";
 }
-
-    <body >
-       
-<center><h2 id="texto1"> Maintenance Student</h2></center>
-         <br />
-<center>
-<table  class="table ">
+<body id="page1">
+   <div class="body1">
+   <div class="main">
+    <center>
+        <header>
+    <h2><strong>Maintenance Student</strong></h2>
+        <br /><br />
+<table id="tabla" class="table table-bordered">
     <thead>
-    <tr >
-        <th>
+    <tr class="active">
+        <th class="active">
             <label>Name</label>
         </th>
-        <th >
+        <th class="active">
             <label>LastName</label>
         </th>
-        <th >
+        <th class="active">
             <label>Age</label>
         </th>
-        <th >
+        <th class="active">
             <label>Address</label>
         </th>
-        <th >
+        <th class="active">
             <label>Telephone</label>
         </th>
-        <th >
+        <th class="active">
             <label>Persona in Charge</label>
         </th>
-        <th >
+        <th class="active">
             <label>School</label>
         </th>
-         <th>
-            Maintenance
+         <th class="active">
+           <label>Maintenance</label>
         </th>
     </tr>
         </thead>
     <tbody>
 @foreach (var item in Model) {
-    <tr >
-        <td >
+    <tr class="success">
+        <td class="active">
             @Html.DisplayFor(modelItem => item.name)
         </td >
-        <td >
+        <td class="active">
             @Html.DisplayFor(modelItem => item.lastName)
         </td>
-        <td >
+        <td class="active" >
             @Html.DisplayFor(modelItem => item.age)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.address)
         </td>
-        <td >
+        <td class="active">
             @Html.DisplayFor(modelItem => item.telephone)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.PersonInCharge.name)
         </td>
-        <td >
+        <td class="active">
             @Html.DisplayFor(modelItem => item.School.name)
         </td>
-          <td >
+          <td class="active">
            
-            @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class= "btn btn-primary" }) 
-            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class= "btn btn-primary" }) 
-            @Html.ActionLink("Delete", "Delete", new { id=item.id }, new { @class= "btn btn-primary" })
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
    }
    </tbody>
-    @Html.ActionLink("Create New", "Create","",new { @class= "btn btn-primary" })
-
-</table>
-    </body>
+    </table>
+    <button id="BtEmployee" type="button" class="btn btn-default">
+    @Html.ActionLink("Create New", "Create")
+    </button>
+ </header>
+<br />
+ 
+    </center>
+       </div>
+        </div>
+   
+</body>

@@ -4,11 +4,14 @@
     ViewBag.Title = "Maintenance Employee Type";
 }
 
-<body id="BEmployee">
-<h2><strong>Maintenance Employee</strong></h2>
-    <br />
+<body id="page1">
+   <div class="body1">
+   <div class="main">
     <center>
-<table id="tabla" class="table table-hover">
+        <header>
+    <h2><strong>Maintenance EmployeeType</strong></h2>
+    <br /><br />
+<table id="tabla" class="table table-bordered">
     <tr class="active">
         <th class="active">
             <label>Name</label>
@@ -34,19 +37,19 @@
             @Html.DisplayFor(modelItem => item.salary)
         </td>
         <td class="active">
-            <button type="button" class=="btn btn-default">
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-            </button>
-        </td>
 
+            @Html.ActionLink("Delete", "Delete", new { id=item.id }) 
+        </td>
     </tr>
 }
-
 </table>
-    <button type="button" class="btn btn-default">
+    <button id="BtEmployee" type="button" class="btn btn-default">
     @Html.ActionLink("Create New", "Create")
     </button>
- </center>
+ </header>
+    </center>
+       </div>
+        </div>
+    
 </body>

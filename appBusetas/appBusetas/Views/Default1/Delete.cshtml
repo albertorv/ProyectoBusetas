@@ -2,37 +2,30 @@
 
 @{
     ViewBag.Title = "Delete";
-} <body>
-        
-    
-<center><h2 id="texto1">Delete</h2></center>
-
+} 
+ <body id="page1">
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Delete</h2></center>
         <br /><br />
-  
         <center>
-
-        <table id="tabla" class="table ">
+        <table  class="table table-bordered">
              <thead >
-            <tr >
-                <td >
+            <tr class="active">
+                <td class="active">
                         <label >Brand</label> 
                 </td>
 
-                <td >
+                <td class="active">
                         <label >Color</label>
                     </td>
-                  
-                
-
-                <td>
+                <td class="active">
                        <label >Capacity</label>
-                    </td>
-                    
-              
             </tr>
                   </thead >
              <tbody >
-            <tr >
+            <tr class="success">
                <td class="display-field">
                         @Html.DisplayFor(model => model.brand)
                </td>
@@ -49,18 +42,23 @@
             </tr>
                  </tbody>
         </table>
-            </center
-    
-
-    <center>
+            
+            
+                
 @using (Html.BeginForm())
 {
         <center>
-        <input type="submit" class="btn btn-primary" value="Delete" />
+        <button type="submit" class="btn btn-success" value="Delete"> Delete </button>
        <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
         </center>
 }
-     </center
+                
+     </center>
+        </header>
+        </div>
+       </div>
+        <br /><br />
+       
     </body>
 
 

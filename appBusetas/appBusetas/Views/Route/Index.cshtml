@@ -3,65 +3,78 @@
 @{
     ViewBag.Title = "Maintenance Route";
 }
-<body id="BEmployee">
-<h2>Maintenance Route</h2>
+<body id="page1">
+    <div class="body1">
+   <div class="main">
+    <center>
+        <header>
+    <h2>Maintenance Route</h2>
+    <br />
 
-
-<table id="tabla" class="table table-hover">
-    <tr>
-        <th>
+<table id="tabla" class="table table-bordered">
+    <tr class="active">
+        <th class="active">
             <label>Bus</label>
         </th>
-        <th>
+        <th class="active">
             <label>Day of the Week</label>
         </th>
-        <th>
+        <th class="active">
             <label>Going To School</label>
         </th>
-        <th>
+        <th class="active">
             <label>Going To Home</label>
         </th>
-        <th>
+        <th class="active">
             <label>Pilot</label>
         </th>
-        <th>
+        <th class="active">
             <label>Employee</label>
         </th>
-        <th></th>
+        <th class="active">
+            <label>Maintenance</label>
+        </th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr class="success">
         <td>
             @Html.DisplayFor(modelItem => item.Bus.brand)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.RouteSchedule.dayOfTheWeek)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.goingToSchool)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.goingToHome)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.Employee1.name)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.Employee.name)
         </td>
-        <td>
-            <button type="button" class=="btn btn-default">
+        <td class="active">
+            
                 @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+
                 @Html.ActionLink("Delete", "Delete", new { id=item.id })
-            </button>
+            
         </td>
     </tr>
 }
 
 </table>
-    <button type="button" class=="btn btn-default">
-        @Html.ActionLink("Create New", "Create")
+    <button id="BtEmployee" type="button" class="btn btn-default">
+    @Html.ActionLink("Create New", "Create")
     </button>
+ </header>
+<br />
+ 
+    </center>
+       </div>
+        </div>
+    
 </body>

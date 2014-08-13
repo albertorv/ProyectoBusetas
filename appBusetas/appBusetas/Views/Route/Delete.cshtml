@@ -4,57 +4,69 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>Route</legend>
-
-    <div class="">
-         <label>Bus: </label>
+ <body id="page1">
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Delete</h2></center>
+        <br /><br />
+        <center>
+    <form class="form-horizontal">
+    <div class="form-group">
+         <label>Bus</label>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Bus.brand)
     </div>
 
-    <div class="">
-         <label>Route Schedule: </label>
+    <div class="form-group">
+         <label>Route Schedule</label>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.RouteSchedule.dayOfTheWeek)
     </div>
 
-    <div class="">
-        <label>Going to School: </label>
+    <div class="form-group">
+        <label>Going to School</label>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.goingToSchool)
     </div>
 
-    <div class="">
-         <label>Going to Home: </label>
+    <div class="form-group">
+         <label>Going to Home</label>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.goingToHome)
     </div>
 
-    <div class="">
-         <label>Pilot: </label>
+    <div class="form-group">
+         <label>Driver</label>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Employee1.name)
     </div>
 
-    <div class="">
-         <label>Employee: </label>
+    <div class="form-group">
+         <label>Employee</label>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Employee.name)
     </div>
-</fieldset>
+       
+        </form>
+        </center>
+        </header>
+       </div>
+       
+
 @using (Html.BeginForm()) {
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+     <center>
+        <button type="submit" class="btn btn-success" value="Delete"> Delete </button>
+       <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
+        </center>
 }
+      </div>
+        <br /><br />
+       
+    </body>

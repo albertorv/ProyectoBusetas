@@ -4,21 +4,23 @@
     ViewBag.Title = "Delete";
 }
 
-<body background="http://www.guia-empresas.net/fondos/grandes/GE-fondo11.jpg">
-
-<center> <h2 id="h2DelPerson">Delete</h2> </center>
-    <div class="table-responsive">
+<body id="page1">
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Delete</h2></center>
+        <br /><br />
         <center>
- <table id="tabla" class="table table-bordered">
+        <table  class="table table-bordered">
      <tr class="success"> 
-    <td class="">
-         <label>Name: </label>
+        <td class="active">
+         <label>Name</label>
     </td>
-    <td class="">
-        <label>Description: </label>
+    <td class="active">
+        <label>Description</label>
     </td>
-    <td class="">
-         <label>Salary: </label>
+    <td class="active">
+         <label>Salary</label>
     </td>
          </tr>
      <tr>
@@ -33,12 +35,19 @@
     </td>
      </tr>
 </table>
+            
  </center>
+        </header>
         </div>
-    <center>
+    </div>
+    
 @using (Html.BeginForm()) {
-     <button type="submit"   class="btn btn-success" value="Delete">Delete</button> 
-     <button type="submit"   class="btn btn-success" value="Create"> @Html.ActionLink("Back to List", "Index")</button>
+    <center>
+        <button type="submit" class="btn btn-success" value="Delete"> Delete </button>
+       <button type="button" class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</button>
+        </center>
 }
-</center>
+
+        <br /><br />
+       
     </body>

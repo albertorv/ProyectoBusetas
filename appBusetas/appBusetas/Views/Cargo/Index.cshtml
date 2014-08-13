@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Buseta_DataAccess.cargo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<body id="page1" >
+
+    <div class="body1">
+   <div class="main">
+   
+<center>
+<header> 
+    <h2><strong>Mantenimiento de Cargo</strong></h2>
+    <br /><br />
+
+<table id="tabla" class="table table-bordered">
+    <tr class="success">
+        <th td class="active">
+            <label>Cargo ID </label>
+        </th>
+        <th td class="active">
+            <label>Student´s Name </label>
+        </th>
+        <th td class="active">
+            <label>Check in </label>
+        </th>
+        <th td class="active">
+            <label>Check out </label>
+        </th>
+        <th>
+           <label>Arrival </label>
+        </th>
+        <th td class="active">
+            <label>Departure </label>
+        </th>
+        <th td class="active">
+            <label>Bus Brand </label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="success">
+        <td td class="active">
+            @Html.DisplayFor(modelItem => item.cargo_Id)
+        </td>
+        <td td class="active">
+            @Html.DisplayFor(modelItem => item.Student.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.check_in)
+        </td>
+        <td td class="active">
+            @Html.DisplayFor(modelItem => item.check_out)
+        </td>
+        <td td class="active">
+            @Html.DisplayFor(modelItem => item.Arrival)
+        </td>
+        <td td class="active">
+            @Html.DisplayFor(modelItem => item.Departure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bus.brand)
+        </td>
+        <td td class="active">
+            @Html.ActionLink("Edit", "Edit", new { id=item.cargo_Id }) |
+            @Html.ActionLink("Delete", "Delete", new {id=item.cargo_Id })
+        </td>
+    </tr>
+}
+
+</table>  
+    
+ <button id="BtEmployee" type="button" class="btn btn-default">
+    @Html.ActionLink("Create New", "Create")
+</button>
+    </header>
+  
+    </center>
+       </div>
+        </div>
+   
+</body>

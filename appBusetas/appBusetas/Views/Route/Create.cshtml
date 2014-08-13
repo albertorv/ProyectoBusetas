@@ -3,72 +3,75 @@
 @{
     ViewBag.Title = "Create";
 }
+<body id="page1">
+    <div class="body1">
+   <div class="main">
+   <header>
+        <center><h2>Create</h2></center>
+        <br />
+   <center>
+  <form class="form-horizontal">
 
-<h2>Create</h2>
-
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>Route</legend>
-
-        <div class="">
-            <label>Bus: </label>
+        <div class="form-group">
+            <label>Bus</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("busId", String.Empty)
             @Html.ValidationMessageFor(model => model.busId)
         </div>
 
-        <div class="">
-           <label>Route Schedule: </label> 
+        <div class="form-group">
+           <label>Route Schedule</label> 
         </div>
         <div class="editor-field">
             @Html.DropDownList("routeScheduleId", String.Empty)
             @Html.ValidationMessageFor(model => model.routeScheduleId)
         </div>
 
-        <div class="">
-            <label>Going to School: </label>
+        <div class="form-group">
+            <label>Going to School</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.goingToSchool)
             @Html.ValidationMessageFor(model => model.goingToSchool)
         </div>
 
-        <div class="">
-            <label>Going to Home: </label>
+        <div class="form-group">
+            <label>Going to Home</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.goingToHome)
             @Html.ValidationMessageFor(model => model.goingToHome)
         </div>
 
-        <div class="">
-            <label>Pilot: </label>
+        <div class="form-group">
+            <label>Driver</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("pilotId", String.Empty)
             @Html.ValidationMessageFor(model => model.pilotId)
         </div>
 
-        <div class="">
-          <label>Employee: </label>
+        <div class="form-group">
+          <label>Employee</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("copilotId", String.Empty)
             @Html.ValidationMessageFor(model => model.copilotId)
         </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+      </form>
+       <br />
+         <button type="submit"   class="btn btn-primary" value="Create">Create</button> |
+        <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
+    
+   </center>
+       </header>
+       
+       </div>
+        </div>
+   
+    
+</body>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

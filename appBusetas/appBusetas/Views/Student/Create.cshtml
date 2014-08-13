@@ -4,17 +4,18 @@
     ViewBag.Title = "Create";
 }
  
-@using (Html.BeginForm()) {
+   <body id="page1">
+       @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-
- 
-<center><h2 id="texto1">Create</h2></center>
+   <div class="body1">
+   <div class="main">
+   <header>
+        <center><h2>Create</h2></center>
         <br />
-       
-    <center>
+   <center>
     <form class="form-horizontal">
             <div class="form-group">
-            <label>Name: </label></div>
+            <label>Name</label></div>
         <div class="editor-field">
             @Html.EditorFor(model => model.name)
             @Html.ValidationMessageFor(model => model.name)
@@ -22,7 +23,7 @@
 
 
         <div class="form-group">
-            <label>LastName: </label>
+            <label>LastName</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.lastName)
@@ -30,7 +31,7 @@
         </div>
 
         <div class="form-group">
-            <label>Age: </label>
+            <label>Age</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.age)
@@ -38,7 +39,7 @@
         </div>
 
         <div class="form-group">
-            <label>Address: </label>
+            <label>Address</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.address)
@@ -46,7 +47,7 @@
         </div>
 
         <div class="form-group">
-            <label>Telephone: </label>
+            <label>Telephone</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.telephone)
@@ -54,7 +55,7 @@
         </div>
 
        <div class="form-group">
-           <label>Persona in Chearge: </label>
+           <label>Persona in Charge</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("personInChargeId", String.Empty)
@@ -62,21 +63,26 @@
         </div>
 
         <div class="form-group">
-            <label>School: </label>
+            <label>School</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("schoolId", String.Empty)
             @Html.ValidationMessageFor(model => model.schoolId)
         </div>
    </form>
-         <br />
         <br />
-        <button type="submit"   class="btn btn-primary" value="Create">Create</button>
+         <button type="submit"   class="btn btn-primary" value="Create">Create</button> |
         <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
-        
-    </center>
-        
-     }  
+    
+   </center>
+       </header>
+       
+       </div>
+        </div>
+    
+       }
+</body>
+     
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

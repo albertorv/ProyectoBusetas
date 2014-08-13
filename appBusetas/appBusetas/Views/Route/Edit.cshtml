@@ -3,19 +3,20 @@
 @{
     ViewBag.Title = "Edit";
 }
-
-<h2>Edit</h2>
-
-@using (Html.BeginForm()) {
+<body id="page1">
+    @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>Route</legend>
-
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Edit</h2></center>
+        <br /><br />
+   <center>
+       
+    <form class="form-horizontal">
         @Html.HiddenFor(model => model.id)
-
-        <div class="">
-            <label>Bus: </label>
+        <div class="form-group">
+            <label>Bus</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("busId", String.Empty)
@@ -23,7 +24,7 @@
         </div>
 
         <div class="editor-label">
-            <label>Route Schedule: </label>
+            <label>Route Schedule</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("routeScheduleId", String.Empty)
@@ -38,7 +39,7 @@
             @Html.ValidationMessageFor(model => model.goingToSchool)
         </div>
 
-        <div class="">
+        <div class="form-group">
            <label>Going to Home: </label>
         </div>
         <div class="editor-field">
@@ -46,32 +47,42 @@
             @Html.ValidationMessageFor(model => model.goingToHome)
         </div>
 
-        <div class="">
-            <label>Pilot: </label>
+        <div class="form-group">
+            <label>Pilot</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("pilotId", String.Empty)
             @Html.ValidationMessageFor(model => model.pilotId)
         </div>
 
-        <div class="">
-            <label>Employee: </label>
+        <div class="form-group">
+            <label>Employee</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("copilotId", String.Empty)
             @Html.ValidationMessageFor(model => model.copilotId)
         </div>
+        
+        </form>
+        </center>
+        </header>
+       
+        </div>
+       
+    </div>
+       
+        <br />
+        
+    <button type="submit"   class="btn btn-success" value="Save">Save</button>
+    <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
+        
+    
+       }
+    
+</body>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
+ 
+ @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+

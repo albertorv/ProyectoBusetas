@@ -64,6 +64,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BusetaModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="cargo.cs">
+      <DependentUpon>BusetaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>BusetaModel.tt</DependentUpon>
@@ -88,6 +91,9 @@
       <DependentUpon>BusetaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Student.cs">
+      <DependentUpon>BusetaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
       <DependentUpon>BusetaModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -4,42 +4,54 @@
     ViewBag.Title = "Route Student Maintenance";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Route.id)
+<body id="page1">
+   <div class="body1">
+   <div class="main">
+    <center>
+        <header>
+    <h2><strong>Route Student Maintenance</strong></h2>
+    <br /><br />
+<table id="tabla" class="table table-bordered">
+    <tr class="active">
+        <th class="active">
+            <label>Route Id</label>
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Student.name)
+        <th class="active">
+            <label>Student</label>
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.orderInRoute)
+        <th class="active">
+            <label>Order in Route</label>
         </th>
-        <th></th>
+        <th class="active"><label>Maintenance</label></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <tr class="success">
+        <td class="active">
             @Html.DisplayFor(modelItem => item.Route.id)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.Student.name)
         </td>
-        <td>
+        <td class="active">
             @Html.DisplayFor(modelItem => item.orderInRoute)
         </td>
-        <td>
+        <td class="active">
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
 }
-
 </table>
+    <button id="BtEmployee" type="button" class="btn btn-default">
+    @Html.ActionLink("Create New", "Create")
+    </button>
+ </header>
+<br />
+ 
+    </center>
+       </div>
+        </div>
+   
+</body>

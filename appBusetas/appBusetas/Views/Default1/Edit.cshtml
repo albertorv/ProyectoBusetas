@@ -3,43 +3,35 @@
 @{
     ViewBag.Title = "Edit";
 }
-         
-
-<center><h2 id="texto1">Edit</h2></center>
-   <br /><br />
-@using (Html.BeginForm()) {
+<body id="page1">
+    @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-
-    
-    <body >
-
-    <center>
+   <div class="body1">
+   <div class="main">
+    <header>
+        <center><h2>Edit</h2></center>
+        <br /><br />
+   <center>
+       
 	<form class="form-horizontal">
-	
-    
-            <div class="form-group">
+      <div class="form-group">
         <label >Brand</label></div> 
 
            <div class="editor-field">
             @Html.EditorFor(model => model.brand)
             @Html.ValidationMessageFor(model => model.brand)
             </div>
-          
-
-
-                <div class="form-group" >
-                <label > Color</label></div> 
-
-                <div class="editor-field">
+ 
+       <div class="form-group" >
+           <label > Color</label>
+       </div> 
+          <div class="editor-field">
             
             @Html.EditorFor(model => model.color)
             @Html.ValidationMessageFor(model => model.color)
             </div>
-       
-
 
             <div class="form-group"> 
-              
                 <label >Capacity</label>
                 <div class="editor-field">
                 @Html.EditorFor(model => model.capacity)
@@ -47,11 +39,21 @@
             </div>
             </div>
         </form>
-        
-    <input class="btn btn-primary" type="submit" value="Save" />
+       
+        <br />
+    <button type="submit"   class="btn btn-success" value="Save">Save</button>
     <button type="submit"   class="btn btn-default" > @Html.ActionLink("Back to List", "Index")</button>
+       
  </center>
-    </body>
-
-}  
+        
+        </header>
+        </div>
+       </div>
+   
+       }
+</body>
  
+ @section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

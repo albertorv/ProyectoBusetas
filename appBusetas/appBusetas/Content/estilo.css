@@ -1,34 +1,32 @@
+.body1 {background:url(../images/bg_top.gif) top repeat-x #f2f2f2}
+.main {	margin:0 auto;	width:980px}
 
-
-#texto{
-	border: solid;
-	border-radius: 5%;
-	width: 50%;
-	height: 80%;
-	margin-left: 25%;
-	font-size: 150%;
-	font-family: Bookman Old Style;
-}
+/* footer */
+footer {color:#aaa;font-size:12px;padding:27px 0 36px 0;text-align:center;width:100%;overflow:hidden}
+footer a {color:#fff}
+footer a:hover {}
+.text {font-size:20px;line-height:1.2em;color:#fff;padding:43px 0 0 45px;letter-spacing:-1px;float:left;width:340px;position:relative}
+.text p span {display:block;margin-top:-4px}
+.text p {padding-left:5px;padding-bottom:0px}
+.text .tittle {font-size:75px;line-height:1.2em;display:block;letter-spacing:-2px;margin-bottom:-10px}
+.text .tittle span {font-size:46px;line-height:1.2em;color:#000;display:block;margin-top:-22px;letter-spacing:-1px}
+.text .button1 {display:block;position:absolute;top:295px;left:49px;background:url(../images/button_1.png) 0 0 no-repeat;width:158px;height:56px;text-align:center;font-size:24px;line-height:46px;color:#3d6c00;text-transform:uppercase;text-decoration:none}
+.text .button1:hover {color:#000}
 
 #conte{
-	
+	margin-bottom:auto;
     text-align: center;
     
    
 }
-#texto1{
-	font-family: 'Blackadder ITC';
-     color:#234578;
-  
-   
-}
 
-
-#tabla{
-	width: 50%;
-	height: 60%;
+#titulo1{
+    margin-top:1%;
+    font-family:Tahoma;
+    color:black;
     text-align:center;
 }
+
 #contenedor{
 	border: solid;
 	width: 40%;
@@ -85,27 +83,11 @@ section #conte{
 h2,h3{
   font-family: Bookman Old Style;
   font-size: 25px;
-  color:  #234578;
+  color:  #000;
   text-align:center;
   
 }
 
- 
-
-#h1{
-
-  text-align: center;
-  color: green;
-  text-transform: uppercase;
-
-  font-family: 'Raleway', cursive;
-  font-weight: 100;
-  margin-top: -39.7%;
-  background: -webkit-linear-gradient(left, black, #eee, black);
-  background: -moz-linear-gradient(left, black, #eee, black);
-  background: -ms-linear-gradient(left, black, #eee, black);
-  background: -o-linear-gradient(left, black, #eee, black);
-}
 
 #inputEmail3{
 	margin-left: 15%;
@@ -113,8 +95,8 @@ h2,h3{
 
 #texto1{
 	font-family: Bookman Old Style;
-    font-size: 250%;
-    margin-top: 10%;
+    font-size: 150%;
+    margin-top: 1%;
    
 }
 .centered{
@@ -204,4 +186,21 @@ ETDelet {
     font-family:'Bookman Old Style';
     font-size:40px;
     color:#081353
+}
+
+.redondo {
+     width: 800px;
+     height: 460px;
+     border-radius: 300px;
+    -moz-border-radius: 300px;
+    -webkit-border-radius: 800px;
+    -khtml-border-radius: 800px;
+     overflow: hidden;
+     margin-right:40%;
+     
+     
+}
+#nav1 {
+    background-color: #FCEFE0;
+   
 }

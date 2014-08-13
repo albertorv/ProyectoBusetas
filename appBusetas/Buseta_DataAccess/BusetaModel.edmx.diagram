@@ -23,6 +23,10 @@
         <AssociationConnector Association="BusetasModel.fk_RouteStudent_RouteId" ManuallyRouted="false" />
         <AssociationConnector Association="BusetasModel.fk_RouteStudent_StudentId" ManuallyRouted="false" />
         <AssociationConnector Association="BusetasModel.fk_Student_SchoolId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BusetasModel.Users" Width="1.5" PointX="6.5" PointY="9.25" />
+        <EntityTypeShape EntityType="BusetasModel.cargo" Width="1.5" PointX="9.125" PointY="15" />
+        <AssociationConnector Association="BusetasModel.fk_cargo_bus" />
+        <AssociationConnector Association="BusetasModel.fk_cargo_student" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
